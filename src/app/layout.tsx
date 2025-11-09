@@ -1,19 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import packagesData from "../../content/packages.json";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://lovevioletarose.com";
 
@@ -100,7 +88,7 @@ export default function RootLayout({
   const jsonLd = generateJsonLd();
 
   return (
-    <html lang="en" className={`${geistSans.variable} ${playfair.variable}`}>
+    <html lang="en">
       <head>
         <script
           type="application/ld+json"
