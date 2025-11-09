@@ -1,0 +1,64 @@
+{
+  "faqs": [
+    {
+      "id": "booking",
+      "question": "How far in advance should I book?",
+      "answer": "I recommend booking 9-12 months in advance, especially for peak wedding season (May-October). However, I occasionally have availability for dates within 3-6 months, so don't hesitate to reach out!"
+    },
+    {
+      "id": "deposit",
+      "question": "What is your deposit and payment structure?",
+      "answer": "I require a 30% deposit along with a signed contract to secure your date. The remaining balance is due two weeks before your wedding day. I accept payment via check, bank transfer, or credit card (3% processing fee applies)."
+    },
+    {
+      "id": "travel",
+      "question": "Do you travel for weddings?",
+      "answer": "Absolutely! I love destination weddings. Travel within 50 miles is complimentary. For destinations beyond that, I charge for travel time and expenses (flight, hotel, meals), which we'll discuss during consultation."
+    },
+    {
+      "id": "style",
+      "question": "How would you describe your photography style?",
+      "answer": "My style is romantic, timeless, and authentic. I focus on capturing genuine emotions and candid moments while also creating beautifully composed portraits. I use natural light whenever possible and aim for a soft, elegant aesthetic."
+    },
+    {
+      "id": "delivery",
+      "question": "When will I receive my photos?",
+      "answer": "You'll receive a sneak peek of 15-20 images within 48 hours. Your full gallery of edited high-resolution images will be delivered within 2-4 weeks depending on your package. Albums take an additional 4-6 weeks for design and production."
+    },
+    {
+      "id": "backup",
+      "question": "What if you can't make it to my wedding?",
+      "answer": "Your wedding is a once-in-a-lifetime event, and I take that responsibility seriously. I maintain backup equipment and have a network of trusted professional photographers. In the unlikely event of an emergency, I'll ensure you have excellent coverage."
+    },
+    {
+      "id": "editing",
+      "question": "What does your editing process include?",
+      "answer": "All delivered images are professionally edited for color correction, exposure, and artistic enhancement. This includes culling, straightening, and removing minor distractions. I don't provide RAW files, as the edited images represent my artistic vision."
+    },
+    {
+      "id": "prints",
+      "question": "Can I print my photos?",
+      "answer": "Yes! All packages include print release authorization, meaning you can print your images wherever you'd like. However, I also offer premium printing services and albums if you prefer professional-grade products."
+    },
+    {
+      "id": "family",
+      "question": "How do you handle family formal photos?",
+      "answer": "We'll create a detailed shot list during our pre-wedding consultation. I typically allocate 20-30 minutes for family formals and work efficiently to get everyone back to celebrating quickly. I recommend assigning a family member to help gather people."
+    },
+    {
+      "id": "rain",
+      "question": "What happens if it rains on my wedding day?",
+      "answer": "Rain doesn't stop me! I come prepared with clear umbrellas and creative solutions. Some of my favorite photos have been taken in the rain. We'll work with your venue to find beautiful indoor and covered locations as backup."
+    },
+    {
+      "id": "guests",
+      "question": "How many photos will I receive?",
+      "answer": "The number varies by package, but you can expect 300+ images for 4 hours, 600+ for 8 hours, and 800+ for 10+ hours. Every special moment will be captured - I believe in quality over quantity and deliver every excellent image from your day."
+    },
+    {
+      "id": "timeline",
+      "question": "Can you help with our wedding day timeline?",
+      "answer": "Absolutely! I have years of experience and I'm happy to help you create a timeline that allows for beautiful photos while keeping your day flowing smoothly. I'll provide recommendations during our planning meeting."
+    }
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "packages": [
+    {
+      "id": "essence",
+      "name": "Essence",
+      "tagline": "Perfect for intimate celebrations",
+      "description": "Capture the beautiful moments of your special day with our intimate package",
+      "price": 1800,
+      "duration": "4 hours",
+      "popular": false,
+      "features": [
+        "4 hours of coverage",
+        "1 professional photographer",
+        "300+ edited high-resolution images",
+        "Online gallery with download access",
+        "Print release authorization",
+        "Pre-wedding consultation"
+      ],
+      "highlights": [
+        "Ideal for small weddings and elopements",
+        "Covers ceremony and portraits",
+        "2-week delivery time"
+      ]
+    },
+    {
+      "id": "elegance",
+      "name": "Elegance",
+      "tagline": "Our most popular choice",
+      "description": "Complete coverage of your wedding day from preparation to celebration",
+      "price": 3200,
+      "duration": "8 hours",
+      "popular": true,
+      "features": [
+        "8 hours of coverage",
+        "1 professional photographer",
+        "600+ edited high-resolution images",
+        "Online gallery with download access",
+        "Print release authorization",
+        "Engagement session (2 hours)",
+        "Pre-wedding consultation",
+        "Custom USB drive with all images",
+        "Second shooter available (add $500)"
+      ],
+      "highlights": [
+        "Perfect for full-day celebrations",
+        "Covers getting ready through reception",
+        "3-week delivery time",
+        "Most comprehensive package"
+      ]
+    },
+    {
+      "id": "timeless",
+      "name": "Timeless",
+      "tagline": "The ultimate luxury experience",
+      "description": "Premium all-inclusive coverage with the finest attention to detail",
+      "price": 5500,
+      "duration": "10+ hours",
+      "popular": false,
+      "features": [
+        "10+ hours of coverage",
+        "2 professional photographers",
+        "800+ edited high-resolution images",
+        "Online gallery with download access",
+        "Print release authorization",
+        "Engagement session (2 hours)",
+        "Pre-wedding consultation",
+        "Custom leather-bound album (50 pages)",
+        "Premium USB drive with all images",
+        "Rehearsal dinner coverage (2 hours)",
+        "Next-day session (2 hours)"
+      ],
+      "highlights": [
+        "Ultimate comprehensive coverage",
+        "Two perspectives throughout the day",
+        "Includes premium keepsake album",
+        "4-week delivery time",
+        "Perfect for destination weddings"
+      ]
+    }
+  ],
+  "addOns": [
+    {
+      "name": "Second Photographer",
+      "price": 500,
+      "description": "Capture multiple perspectives simultaneously"
+    },
+    {
+      "name": "Additional Hour",
+      "price": 300,
+      "description": "Extend coverage beyond package hours"
+    },
+    {
+      "name": "Engagement Session",
+      "price": 400,
+      "description": "2-hour engagement photo shoot"
+    },
+    {
+      "name": "Premium Album",
+      "price": 800,
+      "description": "Custom leather-bound album (50 pages)"
+    },
+    {
+      "name": "Parent Albums",
+      "price": 400,
+      "description": "Matching albums for parents (25 pages each)"
+    },
+    {
+      "name": "Prints Package",
+      "price": 350,
+      "description": "20 8x10 premium prints"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Sarah & Michael",
+      "package": "Elegance",
+      "date": "June 2024",
+      "rating": 5,
+      "text": "Violeta captured our wedding day perfectly! Every single photo tells a story, and we couldn't be happier with how everything turned out. She made us feel so comfortable and natural.",
+      "image": "/testimonials/sarah-michael.jpg"
+    },
+    {
+      "name": "Emily Rodriguez",
+      "package": "Timeless",
+      "date": "September 2023",
+      "rating": 5,
+      "text": "Working with Violeta was an absolute dream. Her attention to detail and artistic vision exceeded all our expectations. The album is breathtaking!",
+      "image": "/testimonials/emily.jpg"
+    },
+    {
+      "name": "James & Patricia",
+      "package": "Essence",
+      "date": "March 2024",
+      "rating": 5,
+      "text": "We had a small intimate ceremony and Violeta was perfect. She captured all the important moments without being intrusive. Highly recommend!",
+      "image": "/testimonials/james-patricia.jpg"
+    },
+    {
+      "name": "Alexandra Chen",
+      "package": "Elegance",
+      "date": "August 2023",
+      "rating": 5,
+      "text": "The photos are absolutely stunning! Violeta has an incredible eye for capturing candid moments and emotions. Our families were blown away.",
+      "image": "/testimonials/alexandra.jpg"
+    }
+  ],
+  "workflow": [
+    {
+      "step": 1,
+      "title": "Initial Consultation",
+      "description": "We'll meet to discuss your vision, style preferences, and wedding day timeline. This is where we get to know each other and ensure we're the perfect fit.",
+      "icon": "calendar",
+      "duration": "30-60 min"
+    },
+    {
+      "step": 2,
+      "title": "Contract & Deposit",
+      "description": "Once we've agreed on the package and details, you'll sign the contract and pay a 30% deposit to secure your date.",
+      "icon": "document",
+      "duration": "Same day"
+    },
+    {
+      "step": 3,
+      "title": "Engagement Session",
+      "description": "If included in your package, we'll schedule your engagement session. This helps us build rapport and get comfortable working together.",
+      "icon": "camera",
+      "duration": "2 hours"
+    },
+    {
+      "step": 4,
+      "title": "Pre-Wedding Planning",
+      "description": "About a month before your wedding, we'll finalize the timeline, shot list, and any special requests. Final payment is due two weeks before the wedding.",
+      "icon": "checklist",
+      "duration": "Ongoing"
+    },
+    {
+      "step": 5,
+      "title": "Your Wedding Day",
+      "description": "I'll arrive early to capture all the special moments from getting ready through the reception. Just relax and enjoy your day!",
+      "icon": "heart",
+      "duration": "Package hours"
+    },
+    {
+      "step": 6,
+      "title": "Photo Delivery",
+      "description": "Your edited photos will be delivered via an online gallery where you can view, download, and share. Albums will be designed and delivered separately.",
+      "icon": "gift",
+      "duration": "2-4 weeks"
+    }
+  ],
+  "galleryImages": [
+    {
+      "url": "/gallery/wedding-1.jpg",
+      "alt": "Bride and groom at sunset",
+      "category": "ceremony"
+    },
+    {
+      "url": "/gallery/wedding-2.jpg",
+      "alt": "Wedding rings closeup",
+      "category": "details"
+    },
+    {
+      "url": "/gallery/wedding-3.jpg",
+      "alt": "First dance",
+      "category": "reception"
+    },
+    {
+      "url": "/gallery/wedding-4.jpg",
+      "alt": "Bride getting ready",
+      "category": "preparation"
+    },
+    {
+      "url": "/gallery/wedding-5.jpg",
+      "alt": "Couple portrait in nature",
+      "category": "portraits"
+    },
+    {
+      "url": "/gallery/wedding-6.jpg",
+      "alt": "Wedding party celebration",
+      "category": "reception"
+    },
+    {
+      "url": "/gallery/wedding-7.jpg",
+      "alt": "Ceremony moment",
+      "category": "ceremony"
+    },
+    {
+      "url": "/gallery/wedding-8.jpg",
+      "alt": "Reception details",
+      "category": "details"
+    }
+  ]
+}
