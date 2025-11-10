@@ -1,6 +1,5 @@
 import Hero from "@/components/sections/Hero";
-import Packages from "@/components/sections/Packages";
-import Comparison from "@/components/sections/Comparison";
+import { PackageGrid } from "@/components/PackageGrid";
 import Workflow from "@/components/sections/Workflow";
 import Gallery from "@/components/sections/Gallery";
 import Testimonials from "@/components/sections/Testimonials";
@@ -11,8 +10,7 @@ export default function Home() {
   return (
     <main className="relative">
       <Hero />
-      <Packages />
-      <Comparison />
+      <PackageGrid />
       <Workflow />
       <Gallery />
       <Testimonials />

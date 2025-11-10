@@ -1,146 +1,212 @@
 {
   "packages": [
     {
-      "id": "essence",
-      "name": "Essence",
-      "tagline": "Perfect for intimate celebrations",
-      "description": "Capture the beautiful moments of your special day with our intimate package",
-      "price": 1800,
+      "id": "p1",
+      "name": "The 4-Hour Elopement Coverage",
+      "tagline": "Intimate moments, beautifully preserved",
+      "description": "Perfect for elopements and intimate ceremonies where every moment counts",
+      "price": 1500,
       "duration": "4 hours",
-      "popular": false,
+      "rank": 1,
+      "isIdeal": false,
+      "isUltimate": false,
       "features": [
-        "4 hours of coverage",
+        "4 hours of continuous coverage",
         "1 professional photographer",
-        "300+ edited high-resolution images",
+        "250+ professionally edited images",
         "Online gallery with download access",
         "Print release authorization",
-        "Pre-wedding consultation"
+        "Pre-ceremony consultation"
       ],
       "highlights": [
-        "Ideal for small weddings and elopements",
-        "Covers ceremony and portraits",
+        "Ideal for elopements and small ceremonies",
+        "Focused on ceremony and couple portraits",
         "2-week delivery time"
       ]
     },
     {
-      "id": "elegance",
-      "name": "Elegance",
-      "tagline": "Our most popular choice",
-      "description": "Complete coverage of your wedding day from preparation to celebration",
-      "price": 3200,
-      "duration": "8 hours",
-      "popular": true,
+      "id": "p2",
+      "name": "The 6-Hour Wedding Day Coverage",
+      "tagline": "Capturing your celebration from vows to first dance",
+      "description": "Essential coverage of your wedding day's most important moments",
+      "price": 2200,
+      "duration": "6 hours",
+      "rank": 2,
+      "isIdeal": false,
+      "isUltimate": false,
       "features": [
-        "8 hours of coverage",
+        "6 hours of continuous coverage",
         "1 professional photographer",
-        "600+ edited high-resolution images",
+        "400+ professionally edited images",
+        "Online gallery with download access",
+        "Print release authorization",
+        "Pre-wedding consultation",
+        "Timeline planning assistance"
+      ],
+      "highlights": [
+        "Covers ceremony through early reception",
+        "Perfect for afternoon weddings",
+        "2-week delivery time"
+      ]
+    },
+    {
+      "id": "p3",
+      "name": "The 8-Hour Full Day Coverage",
+      "tagline": "Complete storytelling from preparation to celebration",
+      "description": "Comprehensive coverage capturing the full arc of your wedding day",
+      "price": 3500,
+      "duration": "8 hours",
+      "rank": 3,
+      "isIdeal": false,
+      "isUltimate": false,
+      "features": [
+        "8 hours of continuous coverage",
+        "1 professional photographer",
+        "600+ professionally edited images",
         "Online gallery with download access",
         "Print release authorization",
         "Engagement session (2 hours)",
         "Pre-wedding consultation",
         "Custom USB drive with all images",
-        "Second shooter available (add $500)"
+        "Timeline planning assistance"
       ],
       "highlights": [
-        "Perfect for full-day celebrations",
-        "Covers getting ready through reception",
+        "Full day coverage from getting ready to reception",
+        "Includes pre-wedding engagement shoot",
         "3-week delivery time",
-        "Most comprehensive package"
+        "Most popular for traditional weddings"
       ]
     },
     {
-      "id": "timeless",
-      "name": "Timeless",
-      "tagline": "The ultimate luxury experience",
-      "description": "Premium all-inclusive coverage with the finest attention to detail",
-      "price": 5500,
-      "duration": "10+ hours",
-      "popular": false,
+      "id": "p4",
+      "name": "The 10-Hour Extended Coverage",
+      "tagline": "The ideal wedding experience",
+      "description": "Extended coverage ensuring no precious moment goes uncaptured",
+      "price": 5000,
+      "duration": "10 hours",
+      "rank": 4,
+      "isIdeal": true,
+      "isUltimate": false,
       "features": [
-        "10+ hours of coverage",
-        "2 professional photographers",
-        "800+ edited high-resolution images",
-        "Online gallery with download access",
+        "10 hours of continuous coverage",
+        "1 lead photographer + assistant",
+        "800+ professionally edited images",
+        "Premium online gallery with download access",
         "Print release authorization",
         "Engagement session (2 hours)",
         "Pre-wedding consultation",
-        "Custom leather-bound album (50 pages)",
-        "Premium USB drive with all images",
+        "Custom leather-bound USB presentation box",
+        "Timeline planning and coordination",
+        "Second photographer for key moments",
+        "Same-day preview (15-20 images within 48 hours)"
+      ],
+      "highlights": [
+        "Recommended for full-day celebrations",
+        "Dual perspectives during key moments",
+        "Extended coverage for cocktail hour and reception",
+        "3-week delivery with rush preview",
+        "Perfect balance of coverage and value"
+      ]
+    },
+    {
+      "id": "p5",
+      "name": "The 12-Hour Complete Coverage",
+      "tagline": "The ultimate luxury experience",
+      "description": "Unparalleled comprehensive coverage from sunrise to celebration",
+      "price": 7500,
+      "duration": "12 hours",
+      "rank": 5,
+      "isIdeal": false,
+      "isUltimate": true,
+      "features": [
+        "12 hours of continuous coverage",
+        "2 professional photographers (full day)",
+        "1000+ professionally edited images",
+        "Premium online gallery with download access",
+        "Print release authorization",
+        "Engagement session (3 hours)",
+        "Pre-wedding consultation",
+        "Custom leather-bound album (60 spreads)",
+        "Premium USB in presentation box",
+        "Timeline planning and full-day coordination",
         "Rehearsal dinner coverage (2 hours)",
-        "Next-day session (2 hours)"
+        "Next-day session (2 hours)",
+        "Rush editing (48-hour preview gallery)",
+        "Dedicated wedding coordinator"
       ],
       "highlights": [
         "Ultimate comprehensive coverage",
-        "Two perspectives throughout the day",
-        "Includes premium keepsake album",
-        "4-week delivery time",
-        "Perfect for destination weddings"
+        "Two photographers capturing every angle",
+        "Includes rehearsal and next-day shoot",
+        "Premium keepsake album included",
+        "2-week delivery with 48-hour preview",
+        "Perfect for destination and multi-day celebrations"
       ]
     }
   ],
   "addOns": [
     {
-      "name": "Second Photographer",
-      "price": 500,
-      "description": "Capture multiple perspectives simultaneously"
+      "name": "Additional Hour",
+      "price": 350,
+      "description": "Extend your coverage hour by hour"
     },
     {
-      "name": "Additional Hour",
-      "price": 300,
-      "description": "Extend coverage beyond package hours"
+      "name": "Second Photographer (Full Day)",
+      "price": 600,
+      "description": "Dual perspectives throughout your celebration"
     },
     {
       "name": "Engagement Session",
-      "price": 400,
-      "description": "2-hour engagement photo shoot"
+      "price": 450,
+      "description": "2-hour pre-wedding photo shoot"
     },
     {
       "name": "Premium Album",
-      "price": 800,
-      "description": "Custom leather-bound album (50 pages)"
+      "price": 900,
+      "description": "Custom leather-bound album (60 spreads)"
     },
     {
       "name": "Parent Albums",
-      "price": 400,
-      "description": "Matching albums for parents (25 pages each)"
+      "price": 450,
+      "description": "Matching albums for parents (30 spreads each)"
     },
     {
-      "name": "Prints Package",
-      "price": 350,
-      "description": "20 8x10 premium prints"
+      "name": "Rush Editing",
+      "price": 500,
+      "description": "48-hour preview gallery delivery"
     }
   ],
   "testimonials": [
     {
       "name": "Sarah & Michael",
-      "package": "Elegance",
+      "package": "10-Hour Extended",
       "date": "June 2024",
       "rating": 5,
-      "text": "Violeta captured our wedding day perfectly! Every single photo tells a story, and we couldn't be happier with how everything turned out. She made us feel so comfortable and natural.",
+      "text": "The 10-hour package was absolutely perfect! Violeta captured everything from our getting ready moments to the last dance. We're so grateful we chose the extended coverage - it was worth every penny.",
       "image": "/testimonials/sarah-michael.jpg"
     },
     {
       "name": "Emily Rodriguez",
-      "package": "Timeless",
+      "package": "12-Hour Complete",
       "date": "September 2023",
       "rating": 5,
-      "text": "Working with Violeta was an absolute dream. Her attention to detail and artistic vision exceeded all our expectations. The album is breathtaking!",
+      "text": "The ultimate luxury package exceeded all expectations. Having two photographers meant we didn't miss a single moment, and the album is absolutely breathtaking. This is an heirloom piece we'll treasure forever.",
       "image": "/testimonials/emily.jpg"
     },
     {
       "name": "James & Patricia",
-      "package": "Essence",
+      "package": "4-Hour Elopement",
       "date": "March 2024",
       "rating": 5,
-      "text": "We had a small intimate ceremony and Violeta was perfect. She captured all the important moments without being intrusive. Highly recommend!",
+      "text": "We had a small intimate ceremony and the 4-hour package was perfect for us. Violeta captured all the important moments without being intrusive. Highly recommend for elopements!",
       "image": "/testimonials/james-patricia.jpg"
     },
     {
       "name": "Alexandra Chen",
-      "package": "Elegance",
+      "package": "8-Hour Full Day",
       "date": "August 2023",
       "rating": 5,
-      "text": "The photos are absolutely stunning! Violeta has an incredible eye for capturing candid moments and emotions. Our families were blown away.",
+      "text": "The 8-hour coverage gave us exactly what we needed. From getting ready through the reception, every special moment was beautifully documented. Our families were blown away by the photos.",
       "image": "/testimonials/alexandra.jpg"
     }
   ],
@@ -164,7 +230,7 @@
       "title": "Engagement Session",
       "description": "If included in your package, we'll schedule your engagement session. This helps us build rapport and get comfortable working together.",
       "icon": "camera",
-      "duration": "2 hours"
+      "duration": "2-3 hours"
     },
     {
       "step": 4,

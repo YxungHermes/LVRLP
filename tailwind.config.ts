@@ -21,6 +21,16 @@ const config: Config = {
           800: '#9d174d',
           900: '#831843',
         },
+        brand: {
+          bg: '#FAFAFA',
+          ink: '#171717',
+          amethyst: '#7F6EE2',
+          amethystSoft: '#ECE9FF',
+          amethystGlow: 'rgba(127, 110, 226, 0.28)',
+          champagne: '#F4E6C5',
+          champagneGlow: 'rgba(244, 230, 197, 0.8)',
+          roseSoft: '#FFE7EF',
+        },
       },
       fontFamily: {
         sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Arial', 'sans-serif'],
