@@ -1,8 +1,8 @@
 import { AnimateIn } from "@/components/AnimateIn";
-import packagesData from "../../../content/packages.json";
+import { site } from "@/content/site";
 
 export default function Packages() {
-  const { packages } = packagesData;
+  const { packages, addOns } = site;
 
   return (
     <section id="packages" className="py-24 bg-white">
@@ -21,14 +21,14 @@ export default function Packages() {
             <AnimateIn key={pkg.id} delay={index * 0.1}>
               <div
                 className={`relative rounded-2xl p-8 h-full flex flex-col ${
-                  pkg.popular
+                  pkg.isIdeal
                     ? "bg-gradient-to-br from-primary-50 to-pink-50 border-2 border-primary-300 shadow-xl scale-105"
                     : "bg-white border-2 border-gray-200 shadow-lg"
                 }`}
               >
-                {pkg.popular && (
+                {pkg.isIdeal && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-600 text-white px-4 py-1 rounded-full text-sm font-medium">
-                    Most Popular
+                    Most Booked
                   </div>
                 )}
 
@@ -37,7 +37,7 @@ export default function Packages() {
                     {pkg.name}
                   </h3>
                   <p className="text-primary-600 font-medium mb-4">{pkg.tagline}</p>
-                  <p className="text-gray-600 text-sm">{pkg.description}</p>
+                  <p className="text-gray-600 text-sm">{pkg.summary}</p>
                 </div>
 
                 <div className="mb-6">
@@ -50,7 +50,7 @@ export default function Packages() {
                 </div>
 
                 <ul className="space-y-3 mb-8 flex-grow">
-                  {pkg.features.map((feature, idx) => (
+                  {pkg.deliverables.map((feature, idx) => (
                     <li key={idx} className="flex items-start">
                       <svg
                         className="w-5 h-5 text-primary-600 mr-2 mt-0.5 flex-shrink-0"
@@ -71,7 +71,7 @@ export default function Packages() {
                 <a
                   href="#contact"
                   className={`block text-center py-3 px-6 rounded-full font-medium transition-colors ${
-                    pkg.popular
+                    pkg.isIdeal
                       ? "bg-primary-600 text-white hover:bg-primary-700"
                       : "bg-gray-900 text-white hover:bg-gray-800"
                   }`}
@@ -90,7 +90,7 @@ export default function Packages() {
               Available Add-Ons
             </h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {packagesData.addOns.map((addon, index) => (
+              {addOns.map((addon, index) => (
                 <div key={index} className="bg-white rounded-lg p-4 border border-gray-200">
                   <div className="flex justify-between items-start mb-2">
                     <h4 className="font-medium text-gray-900">{addon.name}</h4>

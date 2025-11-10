@@ -19,14 +19,14 @@ interface Package {
   isIdeal: boolean;
   isUltimate: boolean;
   coverage: string;
-  deliverables: string[];
+  deliverables: readonly string[];
   turnaround: string;
-  notes: string[];
+  notes: readonly string[];
 }
 
 interface PackageCardProps {
   pkg: Package;
-  allPackages: Package[];
+  allPackages: readonly Package[];
   index: number;
   activeRank: number;
   onHoverStart: () => void;

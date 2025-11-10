@@ -13,13 +13,13 @@ interface Package {
   rank: number;
   isIdeal: boolean;
   isUltimate: boolean;
-  deliverables: string[];
+  deliverables: readonly string[];
   turnaround: string;
   coverage: string;
 }
 
 interface PackageComparisonProps {
-  packages: Package[];
+  packages: readonly Package[];
   currentPackageId: string;
 }
 
@@ -34,7 +34,7 @@ export function PackageComparison({ packages, currentPackageId }: PackageCompari
     return '1 videographer';
   };
 
-  const extractFilmCount = (deliverables: string[]) => {
+  const extractFilmCount = (deliverables: readonly string[]) => {
     return deliverables.filter(d =>
       d.toLowerCase().includes('film') ||
       d.toLowerCase().includes('footage') ||

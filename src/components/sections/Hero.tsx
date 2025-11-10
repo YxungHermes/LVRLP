@@ -3,9 +3,11 @@
 import { AnimateIn } from "@/components/AnimateIn";
 import { motion, useReducedMotion } from "framer-motion";
 import { Play, ChevronDown } from "lucide-react";
+import { site } from "@/content/site";
 
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
+  const { hero } = site;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-brand-roseSoft via-white to-brand-amethystSoft">
@@ -29,37 +31,37 @@ export default function Hero() {
             >
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-brand-amethyst/20 text-brand-amethyst text-sm font-medium shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-brand-amethyst animate-pulse"></span>
-                Cinematic Wedding Films
+                {hero.badge}
               </span>
             </motion.div>
           </AnimateIn>
 
           <AnimateIn delay={0.2}>
             <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-6 leading-[1.1] px-4">
-              Love Stories Worth
+              {hero.headline.split(' ').slice(0, 3).join(' ')}
               <br />
               <span className="bg-gradient-to-r from-brand-amethyst to-primary-600 bg-clip-text text-transparent">
-                Reliving Forever
+                {hero.headline.split(' ').slice(3).join(' ')}
               </span>
             </h1>
           </AnimateIn>
 
           <AnimateIn delay={0.3}>
             <p className="text-xl sm:text-2xl text-gray-600 mb-4 max-w-3xl mx-auto leading-relaxed">
-              Elegant, story-driven videography crafted with heart
+              {hero.subline}
             </p>
             <p className="text-base sm:text-lg text-gray-500 mb-12 max-w-2xl mx-auto">
-              From intimate elopements to grand celebrations, we capture the moments you'll treasure for decades
+              {hero.description}
             </p>
           </AnimateIn>
 
           <AnimateIn delay={0.5}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
               <a
-                href="#packages"
+                href={hero.ctas.primary.href}
                 className="group px-8 py-4 bg-brand-amethyst text-white rounded-full font-medium hover:bg-brand-amethyst/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 duration-200 flex items-center gap-2"
               >
-                View Film Packages
+                {hero.ctas.primary.label}
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
@@ -70,7 +72,7 @@ export default function Hero() {
                 <div className="w-8 h-8 rounded-full bg-brand-amethyst/10 flex items-center justify-center group-hover:bg-brand-amethyst/20 transition-colors">
                   <Play className="w-4 h-4 text-brand-amethyst fill-current" />
                 </div>
-                Watch Our Films
+                {hero.ctas.secondary.label}
               </button>
             </div>
           </AnimateIn>
@@ -78,20 +80,15 @@ export default function Hero() {
           {/* Social proof */}
           <AnimateIn delay={0.7}>
             <div className="flex flex-wrap justify-center gap-8 text-center mb-16">
-              <div>
-                <div className="text-3xl font-bold text-brand-amethyst mb-1">500+</div>
-                <div className="text-sm text-gray-600">Weddings Filmed</div>
-              </div>
-              <div className="hidden sm:block w-px h-12 bg-gray-200"></div>
-              <div>
-                <div className="text-3xl font-bold text-brand-amethyst mb-1">10+</div>
-                <div className="text-sm text-gray-600">Years Experience</div>
-              </div>
-              <div className="hidden sm:block w-px h-12 bg-gray-200"></div>
-              <div>
-                <div className="text-3xl font-bold text-brand-amethyst mb-1">5.0★</div>
-                <div className="text-sm text-gray-600">Average Rating</div>
-              </div>
+              {hero.stats.map((stat, index) => (
+                <>
+                  {index > 0 && <div className="hidden sm:block w-px h-12 bg-gray-200"></div>}
+                  <div key={stat.label}>
+                    <div className="text-3xl font-bold text-brand-amethyst mb-1">{stat.value}</div>
+                    <div className="text-sm text-gray-600">{stat.label}</div>
+                  </div>
+                </>
+              ))}
             </div>
           </AnimateIn>
 

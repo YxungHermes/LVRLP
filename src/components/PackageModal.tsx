@@ -17,14 +17,14 @@ interface Package {
   isIdeal: boolean;
   isUltimate: boolean;
   coverage: string;
-  deliverables: string[];
+  deliverables: readonly string[];
   turnaround: string;
-  notes: string[];
+  notes: readonly string[];
 }
 
 interface PackageModalProps {
   pkg: Package;
-  allPackages: Package[];
+  allPackages: readonly Package[];
   open: boolean;
   onOpenChange: (open: boolean) => void;
   triggerRef?: React.RefObject<HTMLButtonElement>;

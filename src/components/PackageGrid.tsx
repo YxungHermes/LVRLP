@@ -3,14 +3,14 @@
 import { useState } from "react";
 import { PackageCard } from "./PackageCard";
 import { AnimateIn } from "./AnimateIn";
-import packagesData from "../../content/packages.json";
+import { site } from "@/content/site";
 
 export function PackageGrid() {
   // State to track which package is currently being hovered
   // Default to 4 (the ideal 10-hour package)
   const [activeRank, setActiveRank] = useState<number>(4);
 
-  const { packages, addOns } = packagesData;
+  const { packages, addOns, sectionHeaders, trustIndicators } = site;
 
   return (
     <section id="packages" className="py-24 bg-gradient-to-b from-white via-gray-50 to-white">
@@ -18,13 +18,13 @@ export function PackageGrid() {
         {/* Section Header */}
         <AnimateIn className="text-center mb-16">
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-4 leading-tight">
-            Wedding Film Packages
+            {sectionHeaders.packages.title}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Cinematic storytelling for your perfect day
+            {sectionHeaders.packages.subtitle}
           </p>
           <p className="text-sm text-gray-500 mt-4 max-w-xl mx-auto">
-            Each package is thoughtfully designed to capture your unique love story with artistry and elegance
+            {sectionHeaders.packages.description}
           </p>
         </AnimateIn>
 
@@ -48,10 +48,10 @@ export function PackageGrid() {
           <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-sm border border-gray-200">
             <div className="text-center mb-8">
               <h3 className="font-serif text-3xl font-bold text-gray-900 mb-3">
-                Enhance Your Experience
+                {sectionHeaders.addOns.title}
               </h3>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Customize your package with these premium add-ons
+                {sectionHeaders.addOns.subtitle}
               </p>
             </div>
 
@@ -81,20 +81,20 @@ export function PackageGrid() {
         {/* Call to Action */}
         <AnimateIn delay={0.6} className="mt-16 text-center">
           <p className="text-gray-600 mb-6 text-lg">
-            Not sure which package is right for you?
+            {sectionHeaders.cta.question}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="#contact"
+              href={sectionHeaders.cta.primary.href}
               className="px-8 py-4 bg-brand-amethyst text-white rounded-full font-medium hover:bg-brand-amethyst/90 transition-all shadow-lg hover:shadow-xl"
             >
-              Schedule a Consultation
+              {sectionHeaders.cta.primary.label}
             </a>
             <a
-              href="#faq"
+              href={sectionHeaders.cta.secondary.href}
               className="px-8 py-4 bg-white text-gray-900 border-2 border-gray-300 rounded-full font-medium hover:bg-gray-50 transition-colors"
             >
-              View FAQ
+              {sectionHeaders.cta.secondary.label}
             </a>
           </div>
         </AnimateIn>
@@ -102,22 +102,12 @@ export function PackageGrid() {
         {/* Trust Indicators */}
         <AnimateIn delay={0.8} className="mt-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-brand-amethyst mb-2">500+</div>
-              <div className="text-sm text-gray-600">Weddings Captured</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-brand-amethyst mb-2">10+</div>
-              <div className="text-sm text-gray-600">Years Experience</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-brand-amethyst mb-2">5★</div>
-              <div className="text-sm text-gray-600">Average Rating</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-brand-amethyst mb-2">98%</div>
-              <div className="text-sm text-gray-600">Client Satisfaction</div>
-            </div>
+            {trustIndicators.packages.map((indicator) => (
+              <div key={indicator.label}>
+                <div className="text-3xl font-bold text-brand-amethyst mb-2">{indicator.value}</div>
+                <div className="text-sm text-gray-600">{indicator.label}</div>
+              </div>
+            ))}
           </div>
         </AnimateIn>
       </div>

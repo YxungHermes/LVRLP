@@ -1,16 +1,16 @@
 import { AnimateIn } from "@/components/AnimateIn";
-import packagesData from "../../../content/packages.json";
+import { site } from "@/content/site";
 
 export default function Comparison() {
-  const { packages } = packagesData;
+  const { packages } = site;
 
-  // Extract unique features across all packages
+  // Extract unique deliverables across all packages
   const allFeatures = Array.from(
-    new Set(packages.flatMap((pkg) => pkg.features))
+    new Set(packages.flatMap((pkg) => pkg.deliverables))
   );
 
-  const hasFeature = (pkg: typeof packages[0], feature: string) => {
-    return pkg.features.includes(feature);
+  const hasFeature = (pkg: any, feature: string) => {
+    return pkg.deliverables.includes(feature as any);
   };
 
   return (

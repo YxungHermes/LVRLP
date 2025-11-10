@@ -1,6 +1,6 @@
-# Love, Violeta Rose - Photography Landing Page
+# Love, Violeta Rose - Wedding Videography Landing Page
 
-A beautiful, performant Next.js landing page for Love, Violeta Rose photography services featuring smooth animations, content-driven pricing, and modern best practices.
+A beautiful, performant Next.js landing page for Love, Violeta Rose videography services featuring smooth animations, centralized content management, and modern best practices.
 
 ## Features
 
@@ -36,14 +36,17 @@ A beautiful, performant Next.js landing page for Love, Violeta Rose photography 
 
 3. **Set up environment variables**
    ```bash
-   cp .env.example .env
+   cp .env.local.example .env.local
    ```
 
-   Edit `.env` and add your configuration:
+   Edit `.env.local` and add your configuration:
    ```env
-   NEXT_PUBLIC_SITE_URL=https://lovevioletarose.com
+   # Hero video/poster URLs (Dropbox: change ?dl=0 to ?raw=1)
+   NEXT_PUBLIC_HERO_VIDEO_URL=https://www.dropbox.com/s/your-id/video.mp4?raw=1
+   NEXT_PUBLIC_HERO_POSTER_URL=https://www.dropbox.com/s/your-id/poster.jpg?raw=1
+
+   # Contact form
    RESEND_API_KEY=re_your_api_key_here
-   CONTACT_EMAIL=your-email@example.com
    ```
 
 4. **Run the development server**
@@ -53,143 +56,240 @@ A beautiful, performant Next.js landing page for Love, Violeta Rose photography 
 
    Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## How to Edit Pricing and Content
+## 📝 How to Edit Content (Non-Developers Welcome!)
 
-All pricing and content is driven from JSON files in the `content/` directory. This makes it easy to update without touching code.
+**Everything you need to update is in ONE file:** `src/content/site.ts`
 
-### Editing Packages (`content/packages.json`)
+This centralized content file contains all pricing, copy, FAQs, and more. No need to touch components or multiple files!
 
-#### Update Package Pricing
+### Quick Start: Common Edits
 
-To change a package price:
+#### 1️⃣ Change Package Prices
 
-```json
-{
-  "id": "elegance",
-  "name": "Elegance",
-  "price": 3200,  // ← Change this number
-  ...
+Open `src/content/site.ts` and find the `packages` array:
+
+```typescript
+packages: [
+  {
+    id: "p4",
+    name: "The 10-Hour Extended Film",
+    price: 5000,  // ← Change this number
+    duration: "10 hours",
+    // ... rest of package
+  }
+]
+```
+
+**That's it!** The price updates everywhere automatically (cards, modal, comparison grid).
+
+#### 2️⃣ Update Hero Text
+
+Find the `hero` section:
+
+```typescript
+hero: {
+  headline: "Love Stories Worth Reliving Forever",  // ← Edit headline
+  subline: "Elegant, story-driven videography crafted with heart.",  // ← Edit subline
+  description: "From intimate elopements to grand celebrations...",  // ← Edit description
+  badge: "Cinematic Wedding Films",  // ← Edit badge text
 }
 ```
 
-#### Add a New Package
+#### 3️⃣ Change Hero Video/Poster
 
-Add a new object to the `packages` array:
+Edit `.env.local` (NOT site.ts):
 
-```json
-{
-  "id": "premium",
-  "name": "Premium",
-  "tagline": "Luxury experience",
-  "description": "Premium all-day coverage",
-  "price": 4500,
-  "duration": "12 hours",
-  "popular": false,
-  "features": [
-    "12 hours of coverage",
-    "2 professional photographers",
-    "1000+ edited images"
-  ],
-  "highlights": [
-    "Extended coverage",
-    "Multiple photographers"
+```env
+NEXT_PUBLIC_HERO_VIDEO_URL=https://www.dropbox.com/s/abc123/hero.mp4?raw=1
+NEXT_PUBLIC_HERO_POSTER_URL=https://www.dropbox.com/s/xyz789/poster.jpg?raw=1
+```
+
+**Dropbox Links:** Change `?dl=0` to `?raw=1` for direct video/image access!
+
+#### 4️⃣ Update Add-On Prices
+
+Find the `addOns` array:
+
+```typescript
+addOns: [
+  {
+    name: "Second Videographer (Full Day)",
+    price: 600,  // ← Change price
+    description: "Dual perspectives throughout your celebration"
+  }
+]
+```
+
+#### 5️⃣ Edit FAQs
+
+Find the `faq` array:
+
+```typescript
+faq: [
+  {
+    id: "booking",
+    question: "How far in advance should I book?",  // ← Edit question
+    answer: "I recommend booking 9-12 months in advance..."  // ← Edit answer
+  }
+]
+```
+
+**Add a new FAQ:** Just copy an existing object and change the values!
+
+#### 6️⃣ Update Button Labels
+
+Find `sectionHeaders.cta`:
+
+```typescript
+sectionHeaders: {
+  cta: {
+    question: "Not sure which package is right for you?",  // ← Edit question
+    primary: {
+      label: "Schedule a Consultation",  // ← Edit button text
+      href: "#contact"
+    },
+    secondary: {
+      label: "View FAQ",  // ← Edit button text
+      href: "#faq"
+    }
+  }
+}
+```
+
+### Complete Content Structure Reference
+
+#### Hero Section
+
+```typescript
+hero: {
+  headline: string,        // Main headline (split at word 4 for gradient)
+  subline: string,         // Subtitle below headline
+  description: string,     // Paragraph text
+  badge: string,           // Animated badge text
+  ctas: {
+    primary: { label: string, href: string },
+    secondary: { label: string, action: string }
+  },
+  media: {
+    videoUrl: string,      // From NEXT_PUBLIC_HERO_VIDEO_URL
+    posterUrl: string      // From NEXT_PUBLIC_HERO_POSTER_URL
+  },
+  stats: [
+    { value: "500+", label: "Weddings Filmed" },
+    // ... add/edit stats
   ]
 }
 ```
 
-#### Modify Package Features
+#### Package Structure
 
-Edit the `features` array for any package:
-
-```json
-{
-  "features": [
-    "8 hours of coverage",        // ← Edit existing
-    "1 professional photographer",
-    "New feature here"             // ← Add new features
-  ]
-}
+```typescript
+packages: [
+  {
+    id: string,                // Unique identifier (e.g., "p4")
+    name: string,              // Display name
+    tagline: string,           // Italic subtitle
+    summary: string,           // One-sentence description
+    idealFor: string,          // Who this is perfect for
+    price: number,             // Price in dollars
+    duration: string,          // Coverage time (e.g., "10 hours")
+    rank: number,              // Display order (1-5)
+    isIdeal: boolean,          // Show "Most Booked" badge?
+    isUltimate: boolean,       // Ultimate tier styling?
+    coverage: string,          // Coverage description
+    deliverables: string[],    // List of what's included
+    turnaround: string,        // Delivery timeline
+    notes: string[]            // Additional details
+  }
+]
 ```
 
-#### Update Add-ons
+#### Add-Ons
 
-Modify the `addOns` array:
+```typescript
+addOns: [
+  {
+    name: string,         // Add-on name
+    price: number,        // Price in dollars
+    description: string   // What it includes
+  }
+]
+```
 
-```json
-{
-  "name": "Second Photographer",
-  "price": 500,                    // ← Change price
-  "description": "Capture multiple perspectives"
-}
+#### FAQs
+
+```typescript
+faq: [
+  {
+    id: string,         // Unique identifier (lowercase-with-dashes)
+    question: string,   // The question
+    answer: string      // The detailed answer
+  }
+]
 ```
 
 #### Testimonials
 
-Update the `testimonials` array:
-
-```json
-{
-  "name": "Sarah & Michael",
-  "package": "Elegance",
-  "date": "June 2024",            // ← Update date
-  "rating": 5,
-  "text": "Amazing experience!",   // ← Update review text
-  "image": "/testimonials/sarah-michael.jpg"
-}
+```typescript
+testimonials: [
+  {
+    name: string,         // Client name(s)
+    package: string,      // Which package they booked
+    date: string,         // Wedding date (Month YYYY)
+    rating: number,       // 1-5 stars
+    text: string,         // Their review
+    image: string         // Path to photo (e.g., "/testimonials/name.jpg")
+  }
+]
 ```
 
 #### Workflow Steps
 
-Modify the `workflow` array to change your process:
-
-```json
-{
-  "step": 1,
-  "title": "Initial Consultation",     // ← Change title
-  "description": "We'll meet...",      // ← Update description
-  "icon": "calendar",                  // ← Options: calendar, document, camera, checklist, heart, gift
-  "duration": "30-60 min"              // ← Update duration
-}
+```typescript
+workflow: [
+  {
+    step: number,         // Step number (1-6)
+    title: string,        // Step title
+    description: string,  // What happens in this step
+    icon: "calendar" | "document" | "camera" | "checklist" | "heart" | "gift",
+    duration: string      // How long it takes
+  }
+]
 ```
 
-### Editing FAQs (`content/faq.json`)
+### After Editing Content
 
-#### Add a New FAQ
-
-```json
-{
-  "id": "new-question",
-  "question": "Your question here?",
-  "answer": "Your detailed answer here."
-}
-```
-
-#### Update Existing FAQ
-
-```json
-{
-  "id": "booking",
-  "question": "How far in advance should I book?",
-  "answer": "I recommend booking 12-18 months in advance..."  // ← Edit answer
-}
-```
-
-#### Remove an FAQ
-
-Simply delete the entire object from the `faqs` array.
-
-### After Editing
-
-1. **Save your changes** to the JSON files
-2. **Restart the dev server** if running (`Ctrl+C`, then `npm run dev`)
+1. **Save** `src/content/site.ts` (or `.env.local` if you changed hero media)
+2. **Refresh your browser** - Changes appear immediately in dev mode!
 3. **Commit your changes**:
    ```bash
-   git add content/
+   git add src/content/site.ts
    git commit -m "Update pricing and content"
    git push
    ```
 
 The site will automatically rebuild and deploy via Vercel!
+
+### Troubleshooting
+
+**Q: I changed the price but don't see it update**
+- Make sure you saved `src/content/site.ts`
+- Hard refresh your browser (`Cmd+Shift+R` or `Ctrl+F5`)
+
+**Q: My Dropbox video won't load**
+- Change `?dl=0` to `?raw=1` in your Dropbox link
+- Example: `https://www.dropbox.com/s/abc123/video.mp4?raw=1`
+
+**Q: I added a package but it's not showing**
+- Make sure you added a comma after the previous package
+- Check that `rank` is unique and sequential (1, 2, 3, 4, 5)
+- Verify all required fields are present (id, name, price, duration, etc.)
+
+**Q: How do I mark a different package as "Most Booked"?**
+- Find the package you want to highlight
+- Set `isIdeal: true` for that package
+- Set `isIdeal: false` for all others
+- Only ONE package should have `isIdeal: true`
 
 ## Project Structure
 
@@ -199,39 +299,44 @@ LVRLP/
 │   └── workflows/
 │       └── ci.yml              # GitHub Actions CI/CD
 ├── content/
-│   ├── packages.json           # ← EDIT PRICING HERE
-│   └── faq.json               # ← EDIT FAQs HERE
+│   ├── packages.json           # Legacy (migrated to site.ts)
+│   └── faq.json                # Legacy (migrated to site.ts)
 ├── public/
-│   └── og-image.svg           # Open Graph image
+│   ├── gallery/                # Gallery images
+│   ├── testimonials/           # Testimonial photos
+│   └── og-image.svg            # Open Graph image
 ├── src/
 │   ├── app/
 │   │   ├── api/
-│   │   │   └── contact/       # Contact form API endpoint
-│   │   ├── layout.tsx         # Root layout with metadata
-│   │   ├── page.tsx           # Homepage
-│   │   ├── globals.css        # Global styles
-│   │   ├── sitemap.ts         # Dynamic sitemap
-│   │   ├── robots.ts          # Robots.txt
+│   │   │   └── contact/        # Contact form API endpoint
+│   │   ├── layout.tsx          # Root layout with metadata
+│   │   ├── page.tsx            # Homepage
+│   │   ├── globals.css         # Global styles (price height, tabular nums)
+│   │   ├── sitemap.ts          # Dynamic sitemap
+│   │   ├── robots.ts           # Robots.txt
 │   │   └── opengraph-image.tsx # OG image generator
-│   └── components/
-│       ├── sections/          # Page sections
-│       │   ├── Hero.tsx
-│       │   ├── Packages.tsx
-│       │   ├── Comparison.tsx
-│       │   ├── Workflow.tsx
-│       │   ├── Gallery.tsx
-│       │   ├── Testimonials.tsx
-│       │   ├── FAQ.tsx
-│       │   └── Contact.tsx
-│       ├── AnimateIn.tsx      # Animation wrapper components
-│       └── SmoothScroll.tsx   # Lenis smooth scroll
+│   ├── components/
+│   │   ├── sections/           # Page sections
+│   │   │   ├── Hero.tsx        # Hero with centralized content
+│   │   │   └── ...
+│   │   ├── PackageCard.tsx     # Baseline-locked pricing cards
+│   │   ├── PackageGrid.tsx     # Package grid with glow chain
+│   │   ├── PackageModal.tsx    # Centered overlay modal
+│   │   ├── PackageComparison.tsx # Comparison grid
+│   │   ├── AnimateIn.tsx       # Animation wrapper
+│   │   └── SmoothScroll.tsx    # Lenis smooth scroll
+│   ├── content/
+│   │   └── site.ts             # ⭐ EDIT ALL CONTENT HERE ⭐
+│   └── lib/
+│       └── animations.ts       # Framer Motion variants
 ├── tests/
-│   └── smoke.spec.ts          # Playwright tests
-├── .env.example               # Environment variables template
+│   └── smoke.spec.ts           # Playwright tests
+├── .env.local.example          # Environment variables template
+├── .env.local                  # Your actual env vars (gitignored)
 ├── package.json
-├── tailwind.config.ts
+├── tailwind.config.ts          # Brand colors, fonts
 ├── playwright.config.ts
-└── README.md                  # ← You are here
+└── README.md                   # ← You are here
 ```
 
 ## Testing
@@ -284,9 +389,11 @@ npm start
 
 | Variable | Description | Required |
 |----------|-------------|----------|
-| `NEXT_PUBLIC_SITE_URL` | Your site's public URL | Yes |
-| `RESEND_API_KEY` | Resend API key for emails | Yes |
-| `CONTACT_EMAIL` | Email to receive form submissions | Yes |
+| `NEXT_PUBLIC_HERO_VIDEO_URL` | Hero background video URL (Dropbox: use `?raw=1`) | No (has fallback) |
+| `NEXT_PUBLIC_HERO_POSTER_URL` | Hero video poster image URL | No (has fallback) |
+| `RESEND_API_KEY` | Resend API key for contact form emails | Yes |
+
+**Note:** For Dropbox links, change `?dl=0` to `?raw=1` to enable direct video/image access.
 
 ## Performance
 
