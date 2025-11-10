@@ -9,6 +9,14 @@
   --background-end-rgb: 245, 240, 232;  /* Paper */
   --price-height: 5rem;
 
+  /* Clean Luxury Color Tokens */
+  --cream: #FAF6F0;
+  --espresso: #2A1E17;
+  --coffee: #4B3621;
+  --rose-1: #B58B83;
+  --rose-2: #8B5C58;
+  --ink: #0F0F10;
+
   /* Paper texture variables */
   --paper-grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
 }
@@ -173,5 +181,56 @@ html.lenis {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  /* Clean Luxury Utilities */
+  .bg-rose-grad {
+    background: linear-gradient(135deg, var(--rose-1), var(--rose-2));
+  }
+
+  .text-espresso {
+    color: var(--espresso);
+  }
+
+  .text-ink {
+    color: var(--ink);
+  }
+
+  .text-coffee {
+    color: var(--coffee);
+  }
+
+  .paper-grain {
+    mix-blend-mode: multiply;
+    opacity: 0.12;
+    pointer-events: none;
+  }
+
+  /* Type scale with fluid clamp */
+  .text-hero {
+    font-size: clamp(40px, 6vw, 88px);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+  }
+
+  .text-subhero {
+    font-size: clamp(16px, 1.4vw, 22px);
+    line-height: 1.6;
+  }
+
+  /* Hover scale for CTAs */
+  .hover-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .hover-lift:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(15, 15, 16, 0.15);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hover-lift:hover {
+      transform: none;
+    }
   }
 }
