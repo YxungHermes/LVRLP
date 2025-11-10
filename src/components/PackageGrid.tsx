@@ -18,7 +18,7 @@ export function PackageGrid() {
         {/* Section Header */}
         <AnimateIn className="text-center mb-16">
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-4 leading-tight">
-            Photography Packages
+            Wedding Film Packages
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Cinematic storytelling for your perfect day

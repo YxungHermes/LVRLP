@@ -58,7 +58,7 @@ export default function Contact() {
             Let's Connect
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Ready to capture your special moments? Fill out the form below and I'll get back to you within 24 hours.
+            Ready to create your cinematic love story? Fill out the form below and I'll get back to you within 24 hours.
           </p>
         </AnimateIn>
 
@@ -136,9 +136,11 @@ export default function Contact() {
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition"
               >
                 <option value="">Select a package</option>
-                <option value="essence">Essence ($1,800)</option>
-                <option value="elegance">Elegance ($3,200)</option>
-                <option value="timeless">Timeless ($5,500)</option>
+                <option value="4-hour">4-Hour Elopement Film ($1,500)</option>
+                <option value="6-hour">6-Hour Wedding Film ($2,200)</option>
+                <option value="8-hour">8-Hour Full Day Film ($3,500)</option>
+                <option value="10-hour">10-Hour Extended Film ($5,000) - Recommended</option>
+                <option value="12-hour">12-Hour Complete Film ($7,500)</option>
                 <option value="custom">Custom Package</option>
               </select>
             </div>

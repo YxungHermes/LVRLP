@@ -2,145 +2,169 @@
   "packages": [
     {
       "id": "p1",
-      "name": "The 4-Hour Elopement Coverage",
-      "tagline": "Intimate moments, beautifully preserved",
-      "description": "Perfect for elopements and intimate ceremonies where every moment counts",
+      "name": "The 4-Hour Elopement Film",
+      "tagline": "Intimate moments, cinematic forever",
+      "summary": "Perfect for elopements and intimate ceremonies where every frame tells your story",
+      "idealFor": "Elopements, intimate ceremonies, courthouse weddings",
       "price": 1500,
       "duration": "4 hours",
       "rank": 1,
       "isIdeal": false,
       "isUltimate": false,
-      "features": [
-        "4 hours of continuous coverage",
-        "1 professional photographer",
-        "250+ professionally edited images",
-        "Online gallery with download access",
-        "Print release authorization",
-        "Pre-ceremony consultation"
+      "coverage": "4 hours of continuous cinematic coverage",
+      "deliverables": [
+        "3-5 minute highlight film (cinematic edit with music)",
+        "15-20 minute ceremony film (full vows and readings)",
+        "All raw footage delivered on USB drive",
+        "Online viewing gallery with download access",
+        "Personalized music selection consultation"
       ],
-      "highlights": [
-        "Ideal for elopements and small ceremonies",
-        "Focused on ceremony and couple portraits",
-        "2-week delivery time"
+      "turnaround": "4 weeks for highlight film, 6 weeks for full delivery",
+      "notes": [
+        "Ideal for couples wanting cinematic storytelling without a full-day commitment",
+        "Covers ceremony, portraits, and key moments",
+        "Single-camera coverage with professional audio",
+        "Perfect for intimate gatherings under 50 guests"
       ]
     },
     {
       "id": "p2",
-      "name": "The 6-Hour Wedding Day Coverage",
-      "tagline": "Capturing your celebration from vows to first dance",
-      "description": "Essential coverage of your wedding day's most important moments",
+      "name": "The 6-Hour Wedding Film",
+      "tagline": "Your celebration, beginning to first dance",
+      "summary": "Essential cinematic coverage of your wedding day's most treasured moments",
+      "idealFor": "Afternoon weddings, cocktail-style receptions, budget-conscious couples",
       "price": 2200,
       "duration": "6 hours",
       "rank": 2,
       "isIdeal": false,
       "isUltimate": false,
-      "features": [
-        "6 hours of continuous coverage",
-        "1 professional photographer",
-        "400+ professionally edited images",
-        "Online gallery with download access",
-        "Print release authorization",
-        "Pre-wedding consultation",
-        "Timeline planning assistance"
+      "coverage": "6 hours of continuous cinematic coverage",
+      "deliverables": [
+        "5-7 minute highlight film (cinematic edit with music)",
+        "20-30 minute feature film (extended storytelling edit)",
+        "Full ceremony film (uncut, all vows and readings)",
+        "All raw footage delivered on USB drive",
+        "Online viewing gallery with download access",
+        "Personalized music selection consultation",
+        "Social media teaser (60-90 seconds)"
       ],
-      "highlights": [
+      "turnaround": "4 weeks for highlight film, 6 weeks for full delivery",
+      "notes": [
         "Covers ceremony through early reception",
-        "Perfect for afternoon weddings",
-        "2-week delivery time"
+        "Includes first dance and key reception moments",
+        "Single-camera coverage with professional audio",
+        "Perfect for weddings ending by early evening"
       ]
     },
     {
       "id": "p3",
-      "name": "The 8-Hour Full Day Coverage",
-      "tagline": "Complete storytelling from preparation to celebration",
-      "description": "Comprehensive coverage capturing the full arc of your wedding day",
+      "name": "The 8-Hour Full Day Film",
+      "tagline": "Complete cinematic storytelling, prep to party",
+      "summary": "Comprehensive coverage capturing the full emotional arc of your wedding day",
+      "idealFor": "Traditional weddings, full-day celebrations, storytelling-focused couples",
       "price": 3500,
       "duration": "8 hours",
       "rank": 3,
       "isIdeal": false,
       "isUltimate": false,
-      "features": [
-        "8 hours of continuous coverage",
-        "1 professional photographer",
-        "600+ professionally edited images",
-        "Online gallery with download access",
-        "Print release authorization",
-        "Engagement session (2 hours)",
-        "Pre-wedding consultation",
-        "Custom USB drive with all images",
-        "Timeline planning assistance"
+      "coverage": "8 hours of continuous cinematic coverage",
+      "deliverables": [
+        "6-8 minute highlight film (cinematic edit with music)",
+        "30-40 minute feature film (full narrative storytelling)",
+        "Full ceremony film (uncut, multicam where possible)",
+        "Toast and speech films (edited for key moments)",
+        "All raw footage delivered on premium USB drive",
+        "Online viewing gallery with download access",
+        "Personalized music selection consultation",
+        "Social media teaser (60-90 seconds)",
+        "Pre-wedding consultation and shot list planning"
       ],
-      "highlights": [
-        "Full day coverage from getting ready to reception",
-        "Includes pre-wedding engagement shoot",
-        "3-week delivery time",
-        "Most popular for traditional weddings"
+      "turnaround": "5 weeks for highlight film, 7 weeks for full delivery",
+      "notes": [
+        "Covers getting ready through reception dancing",
+        "Includes engagement session for comfort and chemistry",
+        "Single-camera with professional audio + backup recorder",
+        "Most popular for traditional full-day weddings",
+        "Optional second shooter available (+$600)"
       ]
     },
     {
       "id": "p4",
-      "name": "The 10-Hour Extended Coverage",
+      "name": "The 10-Hour Extended Film",
       "tagline": "The ideal wedding experience",
-      "description": "Extended coverage ensuring no precious moment goes uncaptured",
+      "summary": "Extended cinematic coverage ensuring no precious moment escapes the frame",
+      "idealFor": "Full-day celebrations, luxury weddings, couples wanting complete coverage",
       "price": 5000,
       "duration": "10 hours",
       "rank": 4,
       "isIdeal": true,
       "isUltimate": false,
-      "features": [
-        "10 hours of continuous coverage",
-        "1 lead photographer + assistant",
-        "800+ professionally edited images",
-        "Premium online gallery with download access",
-        "Print release authorization",
-        "Engagement session (2 hours)",
-        "Pre-wedding consultation",
-        "Custom leather-bound USB presentation box",
-        "Timeline planning and coordination",
-        "Second photographer for key moments",
-        "Same-day preview (15-20 images within 48 hours)"
+      "coverage": "10 hours of continuous dual-camera cinematic coverage",
+      "deliverables": [
+        "8-10 minute highlight film (cinematic edit with music)",
+        "45-60 minute feature film (full narrative with chapters)",
+        "Full ceremony film (uncut, multicam)",
+        "Complete toast and speech films",
+        "Engagement session film (3-5 minutes)",
+        "All raw footage delivered on premium USB in leather box",
+        "4K online viewing gallery with download access",
+        "Personalized music selection consultation",
+        "Social media teaser pack (3 versions: 15s, 60s, 90s)",
+        "Pre-wedding consultation and detailed shot list",
+        "Same-day teaser (1-2 clips within 48 hours)"
       ],
-      "highlights": [
-        "Recommended for full-day celebrations",
-        "Dual perspectives during key moments",
-        "Extended coverage for cocktail hour and reception",
-        "3-week delivery with rush preview",
-        "Perfect balance of coverage and value"
+      "turnaround": "3 weeks for highlight, 6 weeks for feature film and full delivery",
+      "notes": [
+        "Dual-camera coverage for multiple perspectives",
+        "Lead videographer + second shooter throughout",
+        "Covers prep through late-night dancing",
+        "Professional audio: wireless mics + boom",
+        "Includes 2-hour engagement session",
+        "Perfect balance of coverage, quality, and value",
+        "Rush preview for immediate sharing"
       ]
     },
     {
       "id": "p5",
-      "name": "The 12-Hour Complete Coverage",
-      "tagline": "The ultimate luxury experience",
-      "description": "Unparalleled comprehensive coverage from sunrise to celebration",
+      "name": "The 12-Hour Complete Film",
+      "tagline": "The ultimate luxury cinematic experience",
+      "summary": "Unparalleled comprehensive coverage from sunrise preparations to midnight celebration",
+      "idealFor": "Destination weddings, multi-venue celebrations, luxury productions",
       "price": 7500,
-      "duration": "12 hours",
+      "duration": "12+ hours",
       "rank": 5,
       "isIdeal": false,
       "isUltimate": true,
-      "features": [
-        "12 hours of continuous coverage",
-        "2 professional photographers (full day)",
-        "1000+ professionally edited images",
-        "Premium online gallery with download access",
-        "Print release authorization",
-        "Engagement session (3 hours)",
-        "Pre-wedding consultation",
-        "Custom leather-bound album (60 spreads)",
-        "Premium USB in presentation box",
-        "Timeline planning and full-day coordination",
-        "Rehearsal dinner coverage (2 hours)",
-        "Next-day session (2 hours)",
-        "Rush editing (48-hour preview gallery)",
-        "Dedicated wedding coordinator"
+      "coverage": "12+ hours of continuous dual-camera cinematic coverage with drone",
+      "deliverables": [
+        "10-12 minute highlight film (cinematic masterpiece)",
+        "60-90 minute feature film (full narrative with chapters)",
+        "Full ceremony film (uncut, multicam)",
+        "Complete toast and speech films",
+        "Engagement session film (5-7 minutes, premium location)",
+        "Rehearsal dinner coverage (2 hours, highlight edit)",
+        "Next-day session film (brunch or bridal portraits)",
+        "Drone footage (aerial establishing shots and portraits)",
+        "All raw footage on premium USB in leather presentation box",
+        "4K online viewing gallery with download access",
+        "Custom leather-bound USB keepsake album",
+        "Personalized music selection with licensed soundtrack",
+        "Social media teaser pack (5 versions optimized by platform)",
+        "Pre-wedding consultation with shot list and timeline",
+        "Same-day highlight reel (delivered within 72 hours)"
       ],
-      "highlights": [
-        "Ultimate comprehensive coverage",
-        "Two photographers capturing every angle",
-        "Includes rehearsal and next-day shoot",
-        "Premium keepsake album included",
-        "2-week delivery with 48-hour preview",
-        "Perfect for destination and multi-day celebrations"
+      "turnaround": "2 weeks for highlight, 5 weeks for feature and full delivery",
+      "notes": [
+        "Two lead videographers throughout entire day",
+        "Drone pilot for aerial cinematography",
+        "Covers rehearsal through after-party",
+        "Professional audio: multiple wireless + boom systems",
+        "Includes 3-hour engagement session at premium location",
+        "Includes 2-hour rehearsal dinner coverage",
+        "Includes 2-hour next-day brunch/portrait session",
+        "Dedicated video producer for timeline coordination",
+        "Perfect for destination and multi-day celebrations",
+        "Rush delivery for immediate sharing and viewing"
       ]
     }
   ],
@@ -151,62 +175,72 @@
       "description": "Extend your coverage hour by hour"
     },
     {
-      "name": "Second Photographer (Full Day)",
+      "name": "Second Videographer (Full Day)",
       "price": 600,
       "description": "Dual perspectives throughout your celebration"
     },
     {
-      "name": "Engagement Session",
-      "price": 450,
-      "description": "2-hour pre-wedding photo shoot"
-    },
-    {
-      "name": "Premium Album",
-      "price": 900,
-      "description": "Custom leather-bound album (60 spreads)"
-    },
-    {
-      "name": "Parent Albums",
-      "price": 450,
-      "description": "Matching albums for parents (30 spreads each)"
-    },
-    {
-      "name": "Rush Editing",
+      "name": "Drone Footage",
       "price": 500,
-      "description": "48-hour preview gallery delivery"
+      "description": "Aerial cinematic shots and establishing footage"
+    },
+    {
+      "name": "Engagement Film",
+      "price": 450,
+      "description": "2-hour pre-wedding cinematic session"
+    },
+    {
+      "name": "Same-Day Edit",
+      "price": 800,
+      "description": "Highlights played at your reception"
+    },
+    {
+      "name": "Rush Delivery",
+      "price": 500,
+      "description": "72-hour highlight film turnaround"
+    },
+    {
+      "name": "Rehearsal Dinner Coverage",
+      "price": 400,
+      "description": "2-hour coverage with highlight edit"
+    },
+    {
+      "name": "Premium USB Keepsake Box",
+      "price": 150,
+      "description": "Leather-bound presentation box with custom USB"
     }
   ],
   "testimonials": [
     {
       "name": "Sarah & Michael",
-      "package": "10-Hour Extended",
+      "package": "10-Hour Extended Film",
       "date": "June 2024",
       "rating": 5,
-      "text": "The 10-hour package was absolutely perfect! Violeta captured everything from our getting ready moments to the last dance. We're so grateful we chose the extended coverage - it was worth every penny.",
+      "text": "The 10-hour package was absolutely perfect! Violeta captured everything from our getting ready moments to the last dance. The dual-camera coverage meant we didn't miss a single emotion. We're so grateful we chose the extended coverage - it was worth every penny.",
       "image": "/testimonials/sarah-michael.jpg"
     },
     {
       "name": "Emily Rodriguez",
-      "package": "12-Hour Complete",
+      "package": "12-Hour Complete Film",
       "date": "September 2023",
       "rating": 5,
-      "text": "The ultimate luxury package exceeded all expectations. Having two photographers meant we didn't miss a single moment, and the album is absolutely breathtaking. This is an heirloom piece we'll treasure forever.",
+      "text": "The ultimate luxury package exceeded all expectations. Having two videographers and the drone footage created this incredible cinematic experience. The feature film is absolutely breathtaking - we watch it on every anniversary. This is an heirloom piece we'll treasure forever.",
       "image": "/testimonials/emily.jpg"
     },
     {
       "name": "James & Patricia",
-      "package": "4-Hour Elopement",
+      "package": "4-Hour Elopement Film",
       "date": "March 2024",
       "rating": 5,
-      "text": "We had a small intimate ceremony and the 4-hour package was perfect for us. Violeta captured all the important moments without being intrusive. Highly recommend for elopements!",
+      "text": "We had a small intimate ceremony and the 4-hour package was perfect for us. Violeta captured all the important moments without being intrusive. The highlight film brings tears to our eyes every time. Highly recommend for elopements!",
       "image": "/testimonials/james-patricia.jpg"
     },
     {
       "name": "Alexandra Chen",
-      "package": "8-Hour Full Day",
+      "package": "8-Hour Full Day Film",
       "date": "August 2023",
       "rating": 5,
-      "text": "The 8-hour coverage gave us exactly what we needed. From getting ready through the reception, every special moment was beautifully documented. Our families were blown away by the photos.",
+      "text": "The 8-hour coverage gave us exactly what we needed. From getting ready through the reception, every special moment was beautifully captured. The feature film tells our story perfectly. Our families were blown away by the quality and emotion.",
       "image": "/testimonials/alexandra.jpg"
     }
   ],
@@ -214,85 +248,85 @@
     {
       "step": 1,
       "title": "Initial Consultation",
-      "description": "We'll meet to discuss your vision, style preferences, and wedding day timeline. This is where we get to know each other and ensure we're the perfect fit.",
+      "description": "We'll meet to discuss your vision, cinematic style preferences, and wedding day timeline. This is where we get to know each other and ensure we're the perfect creative fit.",
       "icon": "calendar",
       "duration": "30-60 min"
     },
     {
       "step": 2,
       "title": "Contract & Deposit",
-      "description": "Once we've agreed on the package and details, you'll sign the contract and pay a 30% deposit to secure your date.",
+      "description": "Once we've agreed on the package and details, you'll sign the contract and pay a 30% deposit to secure your date on our calendar.",
       "icon": "document",
       "duration": "Same day"
     },
     {
       "step": 3,
       "title": "Engagement Session",
-      "description": "If included in your package, we'll schedule your engagement session. This helps us build rapport and get comfortable working together.",
+      "description": "If included in your package, we'll schedule your engagement film session. This helps us build rapport, understand your chemistry, and get comfortable working together.",
       "icon": "camera",
       "duration": "2-3 hours"
     },
     {
       "step": 4,
       "title": "Pre-Wedding Planning",
-      "description": "About a month before your wedding, we'll finalize the timeline, shot list, and any special requests. Final payment is due two weeks before the wedding.",
+      "description": "About a month before your wedding, we'll finalize the timeline, shot list, music preferences, and any special requests. Final payment is due two weeks before the wedding.",
       "icon": "checklist",
       "duration": "Ongoing"
     },
     {
       "step": 5,
       "title": "Your Wedding Day",
-      "description": "I'll arrive early to capture all the special moments from getting ready through the reception. Just relax and enjoy your day!",
+      "description": "We'll arrive early to capture all the cinematic moments from getting ready through the reception. Just relax, be present, and enjoy your day - we've got you covered!",
       "icon": "heart",
       "duration": "Package hours"
     },
     {
       "step": 6,
-      "title": "Photo Delivery",
-      "description": "Your edited photos will be delivered via an online gallery where you can view, download, and share. Albums will be designed and delivered separately.",
+      "title": "Film Delivery",
+      "description": "Your edited films will be delivered via a premium online gallery where you can view, download, and share. Physical USBs will arrive separately in beautiful presentation packaging.",
       "icon": "gift",
-      "duration": "2-4 weeks"
+      "duration": "2-7 weeks"
     }
   ],
   "galleryImages": [
     {
       "url": "/gallery/wedding-1.jpg",
-      "alt": "Bride and groom at sunset",
+      "alt": "Bride and groom at sunset - cinematic shot",
       "category": "ceremony"
     },
     {
       "url": "/gallery/wedding-2.jpg",
-      "alt": "Wedding rings closeup",
+      "alt": "Wedding rings closeup - detail shot",
       "category": "details"
     },
     {
       "url": "/gallery/wedding-3.jpg",
-      "alt": "First dance",
+      "alt": "First dance - emotional moment",
       "category": "reception"
     },
     {
       "url": "/gallery/wedding-4.jpg",
-      "alt": "Bride getting ready",
+      "alt": "Bride getting ready - preparation",
       "category": "preparation"
     },
     {
       "url": "/gallery/wedding-5.jpg",
-      "alt": "Couple portrait in nature",
+      "alt": "Couple portrait in nature - cinematic",
       "category": "portraits"
     },
     {
       "url": "/gallery/wedding-6.jpg",
-      "alt": "Wedding party celebration",
+      "alt": "Wedding party celebration - reception",
       "category": "reception"
     },
     {
       "url": "/gallery/wedding-7.jpg",
-      "alt": "Ceremony moment",
+      "alt": "Ceremony moment - vows",
       "category": "ceremony"
     },
     {
       "url": "/gallery/wedding-8.jpg",
-      "alt": "Reception details",
+      "alt": "Reception details - decor",
       "category": "details"
     }
   ]

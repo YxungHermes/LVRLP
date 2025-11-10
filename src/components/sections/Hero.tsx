@@ -30,7 +30,7 @@ export default function Hero() {
 
         <AnimateIn delay={0.5}>
           <p className="text-lg text-gray-500 mb-12 max-w-2xl mx-auto">
-            Wedding & event photography that tells your unique love story through timeless, romantic imagery
+            Cinematic wedding films that tell your unique love story through timeless, romantic storytelling
           </p>
         </AnimateIn>
 
