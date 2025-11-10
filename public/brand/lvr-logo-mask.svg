@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid meet">
+  <!-- Black background (hidden area) -->
+  <rect width="100%" height="100%" fill="black"/>
+
+  <!-- White shapes reveal the gradient (visible area) -->
+  <g fill="white">
+    <!-- L -->
+    <path d="M 150 80 L 150 320 L 280 320 L 280 280 L 200 280 L 200 80 Z"/>
+
+    <!-- V with serif flourishes -->
+    <path d="M 340 80 L 390 80 L 490 280 L 590 80 L 640 80 L 510 340 L 470 340 Z"/>
+
+    <!-- R with elegant curve -->
+    <path d="M 700 80 L 750 80 L 750 160 L 820 160 Q 880 160 880 210 Q 880 260 820 260 L 780 260 L 900 320 L 840 320 L 720 260 L 750 260 L 750 200 L 820 200 Q 840 200 840 210 Q 840 220 820 220 L 750 220 L 750 320 L 700 320 Z"/>
+
+    <!-- Decorative underline/flourish -->
+    <path d="M 120 340 Q 600 360 1080 340" stroke="white" stroke-width="3" fill="none" opacity="0.6"/>
+  </g>
+</svg>

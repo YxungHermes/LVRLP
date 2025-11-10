@@ -78,6 +78,13 @@ html.lenis {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+
+  /* Disable logo wipe for reduced motion users */
+  .no-rm,
+  .no-rm * {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 @layer utilities {

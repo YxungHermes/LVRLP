@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { SmoothScroll } from "@/components/SmoothScroll";
+import Providers from "./providers";
 import packagesData from "../../content/packages.json";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://lovevioletarose.com";
@@ -96,7 +97,9 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        <SmoothScroll>{children}</SmoothScroll>
+        <Providers>
+          <SmoothScroll>{children}</SmoothScroll>
+        </Providers>
       </body>
     </html>
   );
