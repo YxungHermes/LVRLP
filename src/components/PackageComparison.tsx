@@ -66,10 +66,10 @@ export function PackageComparison({ packages, currentPackageId }: PackageCompari
           initial={shouldReduceMotion ? {} : { opacity: 0, y: 10 }}
           animate={shouldReduceMotion ? {} : { opacity: 1, y: 0 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="overflow-x-auto -mx-6 px-6 md:-mx-8 md:px-8"
+          className="overflow-x-auto"
         >
           {/* Desktop: Horizontal Scroll */}
-          <div className="hidden md:flex gap-4 pb-4 min-w-max">
+          <div className="hidden md:flex gap-4 pb-4 justify-center flex-wrap">
             {packages.map((pkg) => {
               const isCurrent = pkg.id === currentPackageId;
               return (
