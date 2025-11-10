@@ -28,26 +28,18 @@ export function PackageGrid() {
           </p>
         </AnimateIn>
 
-        {/* Package Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 lg:gap-8 mt-12">
+        {/* Package Cards Grid - Equal Height with Baseline Alignment */}
+        <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-6 lg:gap-8 mt-12 items-stretch">
           {packages.map((pkg, index) => (
-            <div
+            <PackageCard
               key={pkg.id}
-              className={
-                pkg.isIdeal || pkg.isUltimate
-                  ? "md:col-span-2 lg:col-span-1"
-                  : ""
-              }
-            >
-              <PackageCard
-                pkg={pkg}
-                allPackages={packages}
-                index={index}
-                activeRank={activeRank}
-                onHoverStart={() => setActiveRank(pkg.rank)}
-                onHoverEnd={() => setActiveRank(4)} // Return to ideal package
-              />
-            </div>
+              pkg={pkg}
+              allPackages={packages}
+              index={index}
+              activeRank={activeRank}
+              onHoverStart={() => setActiveRank(pkg.rank)}
+              onHoverEnd={() => setActiveRank(4)} // Return to ideal package
+            />
           ))}
         </div>
 

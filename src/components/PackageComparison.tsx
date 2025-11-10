@@ -43,13 +43,13 @@ export function PackageComparison({ packages, currentPackageId }: PackageCompari
   };
 
   return (
-    <div className="border-t border-gray-200 mt-8 pt-6">
+    <div className="border-t border-gray-200 mt-8 pt-6 max-w-5xl mx-auto">
       {/* Toggle Button */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
         className="flex items-center justify-between w-full mb-4 text-left group"
       >
-        <h3 className="text-lg font-bold text-gray-900">Compare All Packages</h3>
+        <h4 className="text-sm font-semibold text-gray-900 tracking-wide">COMPARE PACKAGES</h4>
         <div className="flex items-center gap-2 text-gray-600 group-hover:text-gray-900 transition-colors">
           <span className="text-sm">{isExpanded ? 'Hide' : 'Show'}</span>
           {isExpanded ? (
@@ -60,16 +60,15 @@ export function PackageComparison({ packages, currentPackageId }: PackageCompari
         </div>
       </button>
 
-      {/* Comparison Grid */}
+      {/* Comparison Grid - Centered */}
       {isExpanded && (
         <motion.div
           initial={shouldReduceMotion ? {} : { opacity: 0, y: 10 }}
           animate={shouldReduceMotion ? {} : { opacity: 1, y: 0 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="overflow-x-auto"
         >
-          {/* Desktop: Horizontal Scroll */}
-          <div className="hidden md:flex gap-4 pb-4 justify-center flex-wrap">
+          {/* Desktop: Centered Grid */}
+          <div className="hidden md:grid md:grid-cols-5 gap-3 pb-4">
             {packages.map((pkg) => {
               const isCurrent = pkg.id === currentPackageId;
               return (
@@ -117,15 +116,9 @@ export function PackageComparison({ packages, currentPackageId }: PackageCompari
                       </div>
                     </div>
                     <div className="pt-3 border-t border-gray-200">
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-lg font-medium text-gray-600">$</span>
-                        <span
-                          className="text-2xl font-serif font-semibold text-gray-900"
-                          style={{
-                            fontVariantNumeric: 'lining-nums tabular-nums',
-                            letterSpacing: '-0.01em'
-                          }}
-                        >
+                      <div className="flex items-baseline gap-0.5">
+                        <span className="text-base font-medium text-gray-500 self-end" style={{ paddingBottom: '0.15rem' }}>$</span>
+                        <span className="text-2xl font-serif text-gray-900 tabular-nums" style={{ fontWeight: 600, letterSpacing: '-0.02em' }}>
                           {pkg.price.toLocaleString('en-US')}
                         </span>
                       </div>
@@ -164,14 +157,8 @@ export function PackageComparison({ packages, currentPackageId }: PackageCompari
                       )}
                     </div>
                     <div className="flex items-baseline gap-0.5">
-                      <span className="text-sm font-medium text-gray-600">$</span>
-                      <span
-                        className="text-xl font-serif font-semibold text-gray-900"
-                        style={{
-                          fontVariantNumeric: 'lining-nums tabular-nums',
-                          letterSpacing: '-0.01em'
-                        }}
-                      >
+                      <span className="text-sm font-medium text-gray-500 self-end">$</span>
+                      <span className="text-xl font-serif text-gray-900 tabular-nums" style={{ fontWeight: 600, letterSpacing: '-0.02em' }}>
                         {pkg.price.toLocaleString('en-US')}
                       </span>
                     </div>

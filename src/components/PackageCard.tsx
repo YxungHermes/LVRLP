@@ -50,7 +50,6 @@ export function PackageCard({
   // Determine glow intensity based on state
   const getGlowStyle = () => {
     if (pkg.isIdeal && !shouldReduceMotion) {
-      // Ideal package: persistent glow even when other cards are active
       return {
         boxShadow: isActive || !activeRank
           ? '0 10px 40px rgba(127, 110, 226, 0.28), 0 0 0 1.5px rgba(127, 110, 226, 0.15) inset'
@@ -65,20 +64,17 @@ export function PackageCard({
     return {};
   };
 
-  // Background gradient for ideal and approaching cards
+  // Background gradient for ideal card
   const getBackgroundStyle = () => {
     if (pkg.isIdeal) {
       return 'radial-gradient(100% 120% at 20% 0%, #ECE9FF 0%, white 60%)';
-    }
-    if (isApproaching && !shouldReduceMotion) {
-      return 'linear-gradient(to right, rgba(127, 110, 226, 0.03) 0%, transparent 50%)';
     }
     return 'white';
   };
 
   return (
     <>
-      <motion.div
+      <motion.article
         custom={index}
         variants={shouldReduceMotion ? {} : cardEntrance}
         initial="hidden"
@@ -91,7 +87,8 @@ export function PackageCard({
         whileHover={shouldReduceMotion ? {} : { y: -4 }}
         transition={{ duration: 0.2, ease: "easeOut" }}
         className={clsx(
-          "relative rounded-2xl border transition-all duration-300 ease-out group h-full flex flex-col",
+          "relative rounded-2xl border transition-all duration-300 ease-out group",
+          "grid grid-rows-[auto_auto_auto_auto_var(--price-height)_auto] gap-3 p-6 md:p-8",
           pkg.isIdeal && "border-[2px] border-brand-amethyst/40 shadow-lg",
           !pkg.isIdeal && "border-gray-200 shadow-sm hover:shadow-md"
         )}
@@ -127,109 +124,95 @@ export function PackageCard({
           />
         )}
 
-        {/* Card content */}
-        <div className="p-6 md:p-8 flex-grow flex flex-col">
-          {/* Recommended badge with star icon and pulse animation */}
-          {pkg.isIdeal && (
-            <motion.span
-              className="absolute -top-3 left-6 rounded-full px-4 py-1.5 text-xs font-bold shadow-lg z-10 flex items-center gap-1.5"
+        {/* Most Booked badge - clean, no extra lines */}
+        {pkg.isIdeal && (
+          <motion.span
+            className="absolute -top-3 left-6 rounded-full px-4 py-1.5 text-xs font-bold z-10 flex items-center gap-1.5"
+            style={{
+              background: '#7F6EE2',
+              color: 'white',
+              boxShadow: '0 4px 12px rgba(127, 110, 226, 0.3)',
+            }}
+            initial={shouldReduceMotion ? {} : { scale: 1 }}
+            animate={shouldReduceMotion ? {} : {
+              scale: [1, 1.05, 1],
+              boxShadow: [
+                '0 4px 12px rgba(127, 110, 226, 0.3)',
+                '0 6px 20px rgba(127, 110, 226, 0.5)',
+                '0 4px 12px rgba(127, 110, 226, 0.3)'
+              ]
+            }}
+            transition={{
+              duration: 2,
+              times: [0, 0.5, 1],
+              ease: "easeInOut",
+            }}
+          >
+            <Star className="w-3.5 h-3.5 fill-current" />
+            Most Booked
+          </motion.span>
+        )}
+
+        {/* Row 1: Package name */}
+        <h3 className="font-serif text-xl md:text-2xl font-bold text-gray-900 leading-tight">
+          {pkg.name}
+        </h3>
+
+        {/* Row 2: Tagline */}
+        <p className={clsx(
+          "font-medium text-sm italic",
+          pkg.isIdeal ? "text-brand-amethyst" : "text-primary-600"
+        )}>
+          {pkg.tagline}
+        </p>
+
+        {/* Row 3: Summary (single sentence) */}
+        <p className="text-gray-600 text-sm leading-relaxed">
+          {pkg.summary}
+        </p>
+
+        {/* Row 4: IDEAL FOR */}
+        <p className="text-xs text-gray-700 leading-relaxed">
+          <span className="font-bold text-gray-900 tracking-wide">IDEAL FOR:</span>{" "}
+          {pkg.idealFor}
+        </p>
+
+        {/* Row 5: Price block (fixed height via CSS variable) */}
+        <div className="flex items-center">
+          <div className="flex items-baseline gap-1">
+            <span
+              className="text-xl md:text-2xl font-medium text-gray-500 self-end"
+              style={{ paddingBottom: '0.25rem' }}
+            >
+              $
+            </span>
+            <span
+              className="text-5xl md:text-6xl font-serif text-gray-900 tabular-nums"
               style={{
-                background: '#7F6EE2',
-                color: 'white',
-                boxShadow: '0 4px 12px rgba(127, 110, 226, 0.3)',
-              }}
-              initial={shouldReduceMotion ? {} : { scale: 1 }}
-              animate={shouldReduceMotion ? {} : {
-                scale: [1, 1.05, 1],
-                boxShadow: [
-                  '0 4px 12px rgba(127, 110, 226, 0.3)',
-                  '0 6px 20px rgba(127, 110, 226, 0.5)',
-                  '0 4px 12px rgba(127, 110, 226, 0.3)'
-                ]
-              }}
-              transition={{
-                duration: 2,
-                times: [0, 0.5, 1],
-                ease: "easeInOut",
+                fontWeight: 600,
+                letterSpacing: '-0.03em',
               }}
             >
-              <Star className="w-3.5 h-3.5 fill-current" />
-              Most Booked
-            </motion.span>
-          )}
-
-          {/* Package name and tagline */}
-          <div className="mb-4">
-            <h3 className="font-serif text-xl md:text-2xl font-bold text-gray-900 mb-2 leading-tight">
-              {pkg.name}
-            </h3>
-            <p className={clsx(
-              "font-medium mb-3 text-sm",
-              pkg.isIdeal ? "text-brand-amethyst" : "text-primary-600"
-            )}>
-              {pkg.tagline}
-            </p>
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">
-              {pkg.summary}
-            </p>
+              {pkg.price.toLocaleString('en-US')}
+            </span>
           </div>
-
-          {/* Ideal for - with bold label */}
-          <div className="mb-6 pb-6 border-b border-gray-200">
-            <p className="text-xs text-gray-700 leading-relaxed">
-              <span className="font-bold text-gray-900">IDEAL FOR:</span>{" "}
-              {pkg.idealFor}
-            </p>
-          </div>
-
-          {/* Premium Price Typography */}
-          <div className="mb-6">
-            <div className="flex items-baseline gap-1 mb-2" style={{ height: '4.5rem' }}>
-              {/* Small baseline-aligned dollar sign */}
-              <span
-                className="text-xl md:text-2xl font-medium text-gray-500"
-                style={{
-                  lineHeight: 1,
-                  verticalAlign: 'baseline',
-                  alignSelf: 'flex-end',
-                  paddingBottom: '0.35rem'
-                }}
-              >
-                $
-              </span>
-              {/* Large tabular numerals with elegant tracking */}
-              <span
-                className="text-5xl md:text-6xl font-serif text-gray-900"
-                style={{
-                  fontVariantNumeric: 'lining-nums tabular-nums',
-                  fontWeight: 600,
-                  letterSpacing: '-0.03em',
-                  lineHeight: 1
-                }}
-              >
-                {pkg.price.toLocaleString('en-US')}
-              </span>
-            </div>
-            <p className="text-gray-500 text-sm mt-1">
-              {pkg.duration} of coverage
-            </p>
-          </div>
-
-          {/* Modal Trigger Button */}
-          <button
-            ref={triggerRef}
-            onClick={() => setModalOpen(true)}
-            className={clsx(
-              "flex items-center justify-center gap-2 w-full py-3.5 px-6 rounded-full font-medium transition-all",
-              "focus:outline-none focus:ring-2 focus:ring-offset-2",
-              pkg.isIdeal && "bg-brand-amethyst text-white hover:bg-brand-amethyst/90 focus:ring-brand-amethyst shadow-md hover:shadow-lg",
-              !pkg.isIdeal && "bg-gray-900 text-white hover:bg-gray-800 focus:ring-gray-600 shadow-sm hover:shadow-md"
-            )}
-          >
-            <span className="text-sm font-medium">See everything included</span>
-          </button>
         </div>
-      </motion.div>
+
+        {/* Row 6: CTA button */}
+        <button
+          ref={triggerRef}
+          onClick={() => setModalOpen(true)}
+          className={clsx(
+            "w-full py-3.5 px-6 rounded-full font-medium transition-all",
+            "focus:outline-none focus:ring-2 focus:ring-offset-2",
+            pkg.isIdeal && "bg-brand-amethyst text-white hover:bg-brand-amethyst/90 focus:ring-brand-amethyst shadow-md hover:shadow-lg",
+            !pkg.isIdeal && "bg-gray-900 text-white hover:bg-gray-800 focus:ring-gray-600 shadow-sm hover:shadow-md"
+          )}
+          aria-haspopup="dialog"
+        >
+          <span className="text-sm font-medium">See everything included</span>
+        </button>
+      </motion.article>
 
       {/* Modal */}
       <PackageModal
