@@ -184,24 +184,33 @@ export function PackageCard({
 
           {/* Premium Price Typography */}
           <div className="mb-6">
-            <div className="flex items-baseline gap-1 mb-2">
+            <div className="flex items-baseline gap-1 mb-2" style={{ height: '4.5rem' }}>
               {/* Small baseline-aligned dollar sign */}
-              <span className="text-2xl md:text-3xl font-medium text-gray-600" style={{ lineHeight: 1 }}>
+              <span
+                className="text-xl md:text-2xl font-medium text-gray-500"
+                style={{
+                  lineHeight: 1,
+                  verticalAlign: 'baseline',
+                  alignSelf: 'flex-end',
+                  paddingBottom: '0.35rem'
+                }}
+              >
                 $
               </span>
-              {/* Large tabular numerals with tight tracking */}
+              {/* Large tabular numerals with elegant tracking */}
               <span
-                className="text-5xl md:text-6xl font-serif font-semibold text-gray-900"
+                className="text-5xl md:text-6xl font-serif text-gray-900"
                 style={{
                   fontVariantNumeric: 'lining-nums tabular-nums',
-                  letterSpacing: '-0.02em',
+                  fontWeight: 600,
+                  letterSpacing: '-0.03em',
                   lineHeight: 1
                 }}
               >
                 {pkg.price.toLocaleString('en-US')}
               </span>
             </div>
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-500 text-sm mt-1">
               {pkg.duration} of coverage
             </p>
           </div>

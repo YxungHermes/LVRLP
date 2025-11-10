@@ -73,17 +73,17 @@ export function PackageModal({ pkg, allPackages, open, onOpenChange, triggerRef 
 
         {/* Modal Content */}
         <Dialog.Content asChild>
-          {/* Desktop: Centered Modal (70-80% width), Mobile: Bottom Sheet */}
+          {/* Desktop: Centered Modal, Mobile: Bottom Sheet */}
           <motion.div
-            className="fixed z-50 w-full
+            className="fixed z-50
               /* Mobile: Bottom sheet */
-              bottom-0 left-0 right-0 md:bottom-auto
-              /* Desktop: Centered modal with 70-80% width */
+              bottom-0 left-0 right-0 w-full md:bottom-auto md:left-auto md:right-auto
+              /* Desktop: Centered modal */
               md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2
-              md:w-[80%] md:max-w-5xl
+              md:w-[90%] md:max-w-[1080px]
               bg-white rounded-t-3xl md:rounded-2xl shadow-2xl
-              max-h-[90vh] overflow-hidden
-              focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2"
+              max-h-[90vh] md:max-h-[80vh] overflow-hidden
+              focus:outline-none focus:ring-2 focus:ring-brand-amethyst focus:ring-offset-2"
             variants={typeof window !== 'undefined' && window.innerWidth < 768 ? mobileSheetVariants : contentVariants}
             initial="hidden"
             animate="visible"
@@ -97,16 +97,24 @@ export function PackageModal({ pkg, allPackages, open, onOpenChange, triggerRef 
                   <Dialog.Title className="font-serif text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
                     {pkg.name}
                   </Dialog.Title>
-                  {/* Price Typography */}
+                  {/* Premium Price Typography */}
                   <div className="flex items-baseline gap-1 flex-shrink-0">
-                    <span className="text-xl md:text-2xl font-medium text-gray-600" style={{ lineHeight: 1 }}>
+                    <span
+                      className="text-lg md:text-xl font-medium text-gray-500"
+                      style={{
+                        lineHeight: 1,
+                        alignSelf: 'flex-end',
+                        paddingBottom: '0.25rem'
+                      }}
+                    >
                       $
                     </span>
                     <span
-                      className="text-3xl md:text-4xl font-serif font-semibold text-gray-900"
+                      className="text-3xl md:text-4xl font-serif text-gray-900"
                       style={{
                         fontVariantNumeric: 'lining-nums tabular-nums',
-                        letterSpacing: '-0.02em',
+                        fontWeight: 600,
+                        letterSpacing: '-0.03em',
                         lineHeight: 1
                       }}
                     >
