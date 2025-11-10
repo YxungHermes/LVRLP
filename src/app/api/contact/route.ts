@@ -1,12 +1,20 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY || "dummy_key_for_build");
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { name, email, phone, eventDate, packageInterest, message, website } = body;
+
+    // Check if API key is configured
+    if (!process.env.RESEND_API_KEY) {
+      return NextResponse.json(
+        { error: "Email service not configured" },
+        { status: 503 }
+      );
+    }
 
     // Honeypot check - if 'website' field is filled, it's likely a bot
     if (website) {

@@ -55,10 +55,10 @@ export default function Contact() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateIn className="text-center mb-16">
           <h2 className="font-serif text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Let's Connect
+            Let&apos;s Connect
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Ready to create your cinematic love story? Fill out the form below and I'll get back to you within 24 hours.
+            Ready to create your cinematic love story? Fill out the form below and I&apos;ll get back to you within 24 hours.
           </p>
         </AnimateIn>
 
@@ -182,7 +182,7 @@ export default function Contact() {
 
             {status === "success" && (
               <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-700">
-                Thank you for your message! I'll get back to you within 24 hours.
+                Thank you for your message! I&apos;ll get back to you within 24 hours.
               </div>
             )}
 

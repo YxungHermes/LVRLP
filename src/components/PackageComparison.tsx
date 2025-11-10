@@ -43,14 +43,14 @@ export function PackageComparison({ packages, currentPackageId }: PackageCompari
   };
 
   return (
-    <div className="border-t border-gray-200 mt-8 pt-6 max-w-5xl mx-auto">
+    <div className="border-t border-watercolor-coffee/10 mt-8 pt-6 max-w-5xl mx-auto">
       {/* Toggle Button */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
         className="flex items-center justify-between w-full mb-4 text-left group"
       >
-        <h4 className="text-sm font-semibold text-gray-900 tracking-wide">COMPARE PACKAGES</h4>
-        <div className="flex items-center gap-2 text-gray-600 group-hover:text-gray-900 transition-colors">
+        <h4 className="text-sm font-semibold text-watercolor-espresso tracking-wide">COMPARE PACKAGES</h4>
+        <div className="flex items-center gap-2 text-watercolor-coffee group-hover:text-watercolor-espresso transition-colors">
           <span className="text-sm">{isExpanded ? 'Hide' : 'Show'}</span>
           {isExpanded ? (
             <ChevronUp className="w-5 h-5" />
@@ -75,21 +75,21 @@ export function PackageComparison({ packages, currentPackageId }: PackageCompari
                 <div
                   key={pkg.id}
                   className={clsx(
-                    "flex-shrink-0 w-56 rounded-xl border-2 p-4 transition-all",
-                    isCurrent && "bg-brand-amethystSoft border-brand-amethyst shadow-lg",
-                    !isCurrent && "bg-white border-gray-200 hover:border-gray-300"
+                    "rounded-xl border-2 p-4 transition-all",
+                    isCurrent && "bg-watercolor-wash-light border-watercolor-rose-500 shadow-lg",
+                    !isCurrent && "bg-watercolor-cream border-watercolor-coffee/15 hover:border-watercolor-coffee/30"
                   )}
                 >
                   {/* Package Name */}
-                  <div className="mb-4 pb-4 border-b border-gray-200">
+                  <div className="mb-4 pb-4 border-b border-watercolor-coffee/10">
                     <h4 className={clsx(
                       "font-serif text-base font-bold leading-tight mb-1",
-                      isCurrent ? "text-brand-amethyst" : "text-gray-900"
+                      isCurrent ? "text-watercolor-rose-600" : "text-watercolor-espresso"
                     )}>
                       {pkg.name.replace('The ', '')}
                     </h4>
                     {pkg.isIdeal && (
-                      <span className="inline-block text-xs font-bold text-brand-amethyst">
+                      <span className="inline-block text-xs font-bold text-watercolor-rose-600">
                         ★ Recommended
                       </span>
                     )}
@@ -98,27 +98,27 @@ export function PackageComparison({ packages, currentPackageId }: PackageCompari
                   {/* Stats */}
                   <div className="space-y-3 text-sm">
                     <div>
-                      <div className="text-gray-500 text-xs mb-1">Coverage</div>
-                      <div className="font-medium text-gray-900">{pkg.duration}</div>
+                      <div className="text-watercolor-graphite text-xs mb-1">Coverage</div>
+                      <div className="font-medium text-watercolor-espresso">{pkg.duration}</div>
                     </div>
                     <div>
-                      <div className="text-gray-500 text-xs mb-1">Crew</div>
-                      <div className="font-medium text-gray-900">{extractCrewInfo(pkg.coverage)}</div>
+                      <div className="text-watercolor-graphite text-xs mb-1">Crew</div>
+                      <div className="font-medium text-watercolor-espresso">{extractCrewInfo(pkg.coverage)}</div>
                     </div>
                     <div>
-                      <div className="text-gray-500 text-xs mb-1">Film Deliverables</div>
-                      <div className="font-medium text-gray-900">{extractFilmCount(pkg.deliverables)} films</div>
+                      <div className="text-watercolor-graphite text-xs mb-1">Film Deliverables</div>
+                      <div className="font-medium text-watercolor-espresso">{extractFilmCount(pkg.deliverables)} films</div>
                     </div>
                     <div>
-                      <div className="text-gray-500 text-xs mb-1">Turnaround</div>
-                      <div className="font-medium text-gray-900">
+                      <div className="text-watercolor-graphite text-xs mb-1">Turnaround</div>
+                      <div className="font-medium text-watercolor-espresso">
                         {pkg.turnaround.split(',')[0].replace(' for highlight film', '').replace(' for highlight', '')}
                       </div>
                     </div>
-                    <div className="pt-3 border-t border-gray-200">
+                    <div className="pt-3 border-t border-watercolor-coffee/10">
                       <div className="flex items-baseline gap-0.5">
-                        <span className="text-base font-medium text-gray-500 self-end" style={{ paddingBottom: '0.15rem' }}>$</span>
-                        <span className="text-2xl font-serif text-gray-900 tabular-nums" style={{ fontWeight: 600, letterSpacing: '-0.02em' }}>
+                        <span className="text-base font-medium text-watercolor-coffee self-end" style={{ paddingBottom: '0.15rem' }}>$</span>
+                        <span className="text-2xl font-serif text-watercolor-espresso tabular-nums" style={{ fontWeight: 600, letterSpacing: '-0.02em' }}>
                           {pkg.price.toLocaleString('en-US')}
                         </span>
                       </div>
@@ -138,47 +138,47 @@ export function PackageComparison({ packages, currentPackageId }: PackageCompari
                   key={pkg.id}
                   className={clsx(
                     "rounded-xl border-2 p-4 transition-all",
-                    isCurrent && "bg-brand-amethystSoft border-brand-amethyst",
-                    !isCurrent && "bg-white border-gray-200"
+                    isCurrent && "bg-watercolor-wash-light border-watercolor-rose-500",
+                    !isCurrent && "bg-watercolor-cream border-watercolor-coffee/15"
                   )}
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
                       <h4 className={clsx(
                         "font-serif text-base font-bold leading-tight mb-1",
-                        isCurrent ? "text-brand-amethyst" : "text-gray-900"
+                        isCurrent ? "text-watercolor-rose-600" : "text-watercolor-espresso"
                       )}>
                         {pkg.name.replace('The ', '')}
                       </h4>
                       {pkg.isIdeal && (
-                        <span className="inline-block text-xs font-bold text-brand-amethyst">
+                        <span className="inline-block text-xs font-bold text-watercolor-rose-600">
                           ★ Recommended
                         </span>
                       )}
                     </div>
                     <div className="flex items-baseline gap-0.5">
-                      <span className="text-sm font-medium text-gray-500 self-end">$</span>
-                      <span className="text-xl font-serif text-gray-900 tabular-nums" style={{ fontWeight: 600, letterSpacing: '-0.02em' }}>
+                      <span className="text-sm font-medium text-watercolor-coffee self-end">$</span>
+                      <span className="text-xl font-serif text-watercolor-espresso tabular-nums" style={{ fontWeight: 600, letterSpacing: '-0.02em' }}>
                         {pkg.price.toLocaleString('en-US')}
                       </span>
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-2 text-sm">
                     <div>
-                      <div className="text-gray-500 text-xs">Coverage</div>
-                      <div className="font-medium text-gray-900">{pkg.duration}</div>
+                      <div className="text-watercolor-graphite text-xs">Coverage</div>
+                      <div className="font-medium text-watercolor-espresso">{pkg.duration}</div>
                     </div>
                     <div>
-                      <div className="text-gray-500 text-xs">Crew</div>
-                      <div className="font-medium text-gray-900">{extractCrewInfo(pkg.coverage)}</div>
+                      <div className="text-watercolor-graphite text-xs">Crew</div>
+                      <div className="font-medium text-watercolor-espresso">{extractCrewInfo(pkg.coverage)}</div>
                     </div>
                     <div>
-                      <div className="text-gray-500 text-xs">Films</div>
-                      <div className="font-medium text-gray-900">{extractFilmCount(pkg.deliverables)}</div>
+                      <div className="text-watercolor-graphite text-xs">Films</div>
+                      <div className="font-medium text-watercolor-espresso">{extractFilmCount(pkg.deliverables)}</div>
                     </div>
                     <div>
-                      <div className="text-gray-500 text-xs">Turnaround</div>
-                      <div className="font-medium text-gray-900">
+                      <div className="text-watercolor-graphite text-xs">Turnaround</div>
+                      <div className="font-medium text-watercolor-espresso">
                         {pkg.turnaround.split(',')[0].replace(' for highlight film', '').replace(' for highlight', '')}
                       </div>
                     </div>
