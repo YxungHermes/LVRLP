@@ -41,6 +41,7 @@ export function PackageGrid() {
             >
               <PackageCard
                 pkg={pkg}
+                allPackages={packages}
                 index={index}
                 activeRank={activeRank}
                 onHoverStart={() => setActiveRank(pkg.rank)}

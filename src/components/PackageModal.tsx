@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import * as Dialog from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
+import { PackageComparison } from "./PackageComparison";
 
 interface Package {
   id: string;
@@ -23,12 +24,13 @@ interface Package {
 
 interface PackageModalProps {
   pkg: Package;
+  allPackages: Package[];
   open: boolean;
   onOpenChange: (open: boolean) => void;
   triggerRef?: React.RefObject<HTMLButtonElement>;
 }
 
-export function PackageModal({ pkg, open, onOpenChange, triggerRef }: PackageModalProps) {
+export function PackageModal({ pkg, allPackages, open, onOpenChange, triggerRef }: PackageModalProps) {
   const shouldReduceMotion = useReducedMotion();
 
   const overlayVariants = {
@@ -57,7 +59,7 @@ export function PackageModal({ pkg, open, onOpenChange, triggerRef }: PackageMod
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
-        {/* Backdrop */}
+        {/* Backdrop - uniformly dimmed and blurred */}
         <Dialog.Overlay asChild>
           <motion.div
             className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
@@ -65,35 +67,53 @@ export function PackageModal({ pkg, open, onOpenChange, triggerRef }: PackageMod
             initial="hidden"
             animate="visible"
             exit="hidden"
-            transition={{ duration: 0.2 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.2 }}
           />
         </Dialog.Overlay>
 
         {/* Modal Content */}
         <Dialog.Content asChild>
-          {/* Desktop: Centered Modal, Mobile: Bottom Sheet */}
+          {/* Desktop: Centered Modal (70-80% width), Mobile: Bottom Sheet */}
           <motion.div
             className="fixed z-50 w-full
               /* Mobile: Bottom sheet */
               bottom-0 left-0 right-0 md:bottom-auto
-              /* Desktop: Centered modal */
+              /* Desktop: Centered modal with 70-80% width */
               md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2
-              md:max-w-3xl md:w-full
+              md:w-[80%] md:max-w-5xl
               bg-white rounded-t-3xl md:rounded-2xl shadow-2xl
               max-h-[90vh] overflow-hidden
               focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2"
-            variants={window.innerWidth < 768 ? mobileSheetVariants : contentVariants}
+            variants={typeof window !== 'undefined' && window.innerWidth < 768 ? mobileSheetVariants : contentVariants}
             initial="hidden"
             animate="visible"
             exit="hidden"
             transition={{ duration: shouldReduceMotion ? 0 : 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            {/* Header */}
+            {/* Header with Price */}
             <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 md:px-8 md:py-6 flex items-start justify-between z-10">
               <div className="flex-1 pr-8">
-                <Dialog.Title className="font-serif text-2xl md:text-3xl font-bold text-gray-900 mb-1">
-                  {pkg.name}
-                </Dialog.Title>
+                <div className="flex items-start justify-between gap-4 mb-2">
+                  <Dialog.Title className="font-serif text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+                    {pkg.name}
+                  </Dialog.Title>
+                  {/* Price Typography */}
+                  <div className="flex items-baseline gap-1 flex-shrink-0">
+                    <span className="text-xl md:text-2xl font-medium text-gray-600" style={{ lineHeight: 1 }}>
+                      $
+                    </span>
+                    <span
+                      className="text-3xl md:text-4xl font-serif font-semibold text-gray-900"
+                      style={{
+                        fontVariantNumeric: 'lining-nums tabular-nums',
+                        letterSpacing: '-0.02em',
+                        lineHeight: 1
+                      }}
+                    >
+                      {pkg.price.toLocaleString('en-US')}
+                    </span>
+                  </div>
+                </div>
                 <p className="text-sm md:text-base text-gray-600 italic">{pkg.tagline}</p>
               </div>
               <Dialog.Close asChild>
@@ -178,6 +198,9 @@ export function PackageModal({ pkg, open, onOpenChange, triggerRef }: PackageMod
                   Destination travel (flight, hotel, meals) billed separately. Sales tax may apply based on location.
                 </p>
               </section>
+
+              {/* Package Comparison */}
+              <PackageComparison packages={allPackages} currentPackageId={pkg.id} />
 
               {/* CTA */}
               <div className="pt-4">

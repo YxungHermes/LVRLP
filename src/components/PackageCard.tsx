@@ -26,6 +26,7 @@ interface Package {
 
 interface PackageCardProps {
   pkg: Package;
+  allPackages: Package[];
   index: number;
   activeRank: number;
   onHoverStart: () => void;
@@ -34,6 +35,7 @@ interface PackageCardProps {
 
 export function PackageCard({
   pkg,
+  allPackages,
   index,
   activeRank,
   onHoverStart,
@@ -127,18 +129,33 @@ export function PackageCard({
 
         {/* Card content */}
         <div className="p-6 md:p-8 flex-grow flex flex-col">
-          {/* Recommended badge with star icon */}
+          {/* Recommended badge with star icon and pulse animation */}
           {pkg.isIdeal && (
-            <span
+            <motion.span
               className="absolute -top-3 left-6 rounded-full px-4 py-1.5 text-xs font-bold shadow-lg z-10 flex items-center gap-1.5"
               style={{
                 background: '#7F6EE2',
                 color: 'white',
+                boxShadow: '0 4px 12px rgba(127, 110, 226, 0.3)',
+              }}
+              initial={shouldReduceMotion ? {} : { scale: 1 }}
+              animate={shouldReduceMotion ? {} : {
+                scale: [1, 1.05, 1],
+                boxShadow: [
+                  '0 4px 12px rgba(127, 110, 226, 0.3)',
+                  '0 6px 20px rgba(127, 110, 226, 0.5)',
+                  '0 4px 12px rgba(127, 110, 226, 0.3)'
+                ]
+              }}
+              transition={{
+                duration: 2,
+                times: [0, 0.5, 1],
+                ease: "easeInOut",
               }}
             >
               <Star className="w-3.5 h-3.5 fill-current" />
               Most Booked
-            </span>
+            </motion.span>
           )}
 
           {/* Package name and tagline */}
@@ -208,6 +225,7 @@ export function PackageCard({
       {/* Modal */}
       <PackageModal
         pkg={pkg}
+        allPackages={allPackages}
         open={modalOpen}
         onOpenChange={setModalOpen}
         triggerRef={triggerRef}
