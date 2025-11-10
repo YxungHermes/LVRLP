@@ -52,24 +52,24 @@ export function PackageCard({
     if (pkg.isIdeal && !shouldReduceMotion) {
       return {
         boxShadow: isActive || !activeRank
-          ? '0 10px 40px rgba(127, 110, 226, 0.28), 0 0 0 1.5px rgba(127, 110, 226, 0.15) inset'
-          : '0 8px 30px rgba(127, 110, 226, 0.20), 0 0 0 1.5px rgba(127, 110, 226, 0.12) inset'
+          ? '0 10px 40px rgba(181, 139, 131, 0.3), 0 0 0 1.5px rgba(199, 157, 138, 0.2) inset'
+          : '0 8px 30px rgba(181, 139, 131, 0.22), 0 0 0 1.5px rgba(199, 157, 138, 0.15) inset'
       };
     }
     if (pkg.isUltimate && isActive && !shouldReduceMotion) {
       return {
-        boxShadow: '0 18px 80px rgba(127, 110, 226, 0.35), 0 0 0 2px rgba(244, 230, 197, 0.8) inset'
+        boxShadow: '0 18px 80px rgba(181, 139, 131, 0.38), 0 0 0 2px rgba(228, 193, 176, 0.6) inset'
       };
     }
     return {};
   };
 
-  // Background gradient for ideal card
+  // Background gradient for ideal card - watercolor wash
   const getBackgroundStyle = () => {
     if (pkg.isIdeal) {
-      return 'radial-gradient(100% 120% at 20% 0%, #ECE9FF 0%, white 60%)';
+      return 'radial-gradient(circle at 40% 40%, rgba(228, 193, 176, 0.25) 0%, rgba(250, 246, 240, 1) 60%), radial-gradient(circle at 70% 70%, rgba(199, 157, 138, 0.15) 0%, transparent 50%)';
     }
-    return 'white';
+    return '#FAF6F0';
   };
 
   return (
@@ -89,8 +89,8 @@ export function PackageCard({
         className={clsx(
           "relative rounded-2xl border transition-all duration-300 ease-out group",
           "grid grid-rows-[auto_auto_auto_auto_var(--price-height)_auto] gap-3 p-6 md:p-8",
-          pkg.isIdeal && "border-[2px] border-brand-amethyst/40 shadow-lg",
-          !pkg.isIdeal && "border-gray-200 shadow-sm hover:shadow-md"
+          pkg.isIdeal && "border-[2px] border-watercolor-rose-400/50 shadow-lg",
+          !pkg.isIdeal && "border-watercolor-coffee/15 shadow-sm hover:shadow-md"
         )}
         style={{
           ...getGlowStyle(),
@@ -105,13 +105,13 @@ export function PackageCard({
             whileHover="hover"
             className="absolute inset-0 rounded-2xl"
             style={{
-              border: '2px solid rgba(244, 230, 197, 0.5)',
+              border: '2px solid rgba(228, 193, 176, 0.5)',
               pointerEvents: 'none',
             }}
           />
         )}
 
-        {/* Champagne shimmer effect for ultimate package */}
+        {/* Rose shimmer effect for ultimate package */}
         {pkg.isUltimate && !shouldReduceMotion && (
           <motion.div
             variants={champagneShimmer}
@@ -119,27 +119,27 @@ export function PackageCard({
             whileHover="hover"
             className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none"
             style={{
-              background: 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(244,230,197,0.4) 50%, rgba(255,255,255,0) 100%)',
+              background: 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(228, 193, 176, 0.4) 50%, rgba(255,255,255,0) 100%)',
             }}
           />
         )}
 
-        {/* Most Booked badge - clean, no extra lines */}
+        {/* Most Booked badge - rose gradient */}
         {pkg.isIdeal && (
           <motion.span
             className="absolute -top-3 left-6 rounded-full px-4 py-1.5 text-xs font-bold z-10 flex items-center gap-1.5"
             style={{
-              background: '#7F6EE2',
+              background: 'linear-gradient(135deg, #B58B83 0%, #8B5C58 100%)',
               color: 'white',
-              boxShadow: '0 4px 12px rgba(127, 110, 226, 0.3)',
+              boxShadow: '0 4px 12px rgba(181, 139, 131, 0.4)',
             }}
             initial={shouldReduceMotion ? {} : { scale: 1 }}
             animate={shouldReduceMotion ? {} : {
               scale: [1, 1.05, 1],
               boxShadow: [
-                '0 4px 12px rgba(127, 110, 226, 0.3)',
-                '0 6px 20px rgba(127, 110, 226, 0.5)',
-                '0 4px 12px rgba(127, 110, 226, 0.3)'
+                '0 4px 12px rgba(181, 139, 131, 0.4)',
+                '0 6px 20px rgba(181, 139, 131, 0.6)',
+                '0 4px 12px rgba(181, 139, 131, 0.4)'
               ]
             }}
             transition={{
@@ -154,7 +154,7 @@ export function PackageCard({
         )}
 
         {/* Row 1: Package name */}
-        <h3 className="font-serif text-xl md:text-2xl font-bold text-gray-900 leading-tight">
+        <h3 className="font-serif text-xl md:text-2xl font-bold text-watercolor-espresso leading-tight">
           {pkg.name}
         </h3>
 

@@ -3,17 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
+  /* Watercolor Coffee-Toned Palette */
+  --foreground-rgb: 42, 30, 23;  /* Deep espresso */
+  --background-start-rgb: 250, 246, 240;  /* Cream */
+  --background-end-rgb: 245, 240, 232;  /* Paper */
   --price-height: 5rem;
+
+  /* Paper texture variables */
+  --paper-grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    /* Keep light theme for watercolor aesthetic */
+    --foreground-rgb: 42, 30, 23;
+    --background-start-rgb: 250, 246, 240;
+    --background-end-rgb: 245, 240, 232;
   }
 }
 
@@ -21,10 +26,28 @@ body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
-      transparent,
+      rgb(var(--background-start-rgb)),
       rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    );
+  position: relative;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+
+/* Paper grain texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: var(--paper-grain);
+  background-repeat: repeat;
+  mix-blend-mode: multiply;
+  opacity: 0.4;
 }
 
 html.lenis {
@@ -60,5 +83,88 @@ html.lenis {
 @layer utilities {
   .tabular-nums {
     font-variant-numeric: tabular-nums lining-nums;
+  }
+
+  /* Watercolor wash backgrounds */
+  .watercolor-wash-light {
+    background: radial-gradient(circle at 30% 50%, rgba(228, 193, 176, 0.2) 0%, transparent 70%),
+                radial-gradient(circle at 70% 30%, rgba(199, 157, 138, 0.15) 0%, transparent 60%);
+  }
+
+  .watercolor-wash-medium {
+    background: radial-gradient(circle at 40% 40%, rgba(228, 193, 176, 0.3) 0%, transparent 65%),
+                radial-gradient(circle at 60% 60%, rgba(199, 157, 138, 0.25) 0%, transparent 70%),
+                radial-gradient(circle at 80% 20%, rgba(181, 139, 131, 0.2) 0%, transparent 50%);
+  }
+
+  .watercolor-wash-dark {
+    background: radial-gradient(circle at 50% 50%, rgba(199, 157, 138, 0.35) 0%, transparent 60%),
+                radial-gradient(circle at 20% 80%, rgba(181, 139, 131, 0.3) 0%, transparent 65%);
+  }
+
+  /* Brush stroke divider */
+  .brush-stroke-divider {
+    height: 2px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(75, 54, 33, 0.2) 10%,
+      rgba(75, 54, 33, 0.6) 30%,
+      rgba(75, 54, 33, 0.8) 50%,
+      rgba(75, 54, 33, 0.6) 70%,
+      rgba(75, 54, 33, 0.2) 90%,
+      transparent 100%
+    );
+    opacity: 0.7;
+  }
+
+  /* Paper texture background */
+  .paper-texture {
+    position: relative;
+  }
+
+  .paper-texture::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--paper-grain);
+    background-repeat: repeat;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Coffee stain accent */
+  .coffee-stain {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .coffee-stain::after {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(75, 54, 33, 0.08) 0%, transparent 70%);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    pointer-events: none;
+  }
+
+  /* Airy text spacing */
+  .text-airy {
+    letter-spacing: 0.2em;
+    line-height: 1.6;
+  }
+
+  /* Rose gradient text */
+  .text-rose-gradient {
+    background: linear-gradient(135deg, #B58B83 0%, #8B5C58 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
